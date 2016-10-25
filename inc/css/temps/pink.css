@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2015, 11:02:13 AM
+    Author     : Bilal
+*/
+
+a,a:visited{
+    color: #fa2d65;
+}
+
+a:hover,
+a:focus,
+.site-info a:hover{
+    color: #BD204B;
+}
+
+ul.lebanon-nav > li.menu-item.current-menu-item a,
+ul.lebanon-nav > li.menu-item.current-menu-parent a,
+ul.lebanon-nav > li.menu-item a:hover{
+    
+    border-bottom: 2px solid #BD204B;
+
+}
+
+ul.lebanon-nav > li > ul li.current-menu-item > a{
+    color: #fa2d65;
+}
+
+ul.lebanon-nav ul li a:hover{
+    color: #BD204B;
+}
+
+.lebanon-button.primary,
+button, 
+input[type="button"], 
+input[type="submit"],
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt{
+    background: #fa2d65;
+    color: #fff;
+}
+
+.lebanon-button.primary:hover,
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover{
+    background: #BD204B;
+}
+
+.woocommerce .woocommerce-message{
+    border-top-color: #fa2d65;
+}
+
+.woocommerce .woocommerce-message:before{
+    color: #fa2d65;
+}
+
+.main-navigation .lebanon-cart,
+.lebanon-mobile-cart .lebanon-cart{
+    background: #fa2d65 !important;
+    transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    top: -5px;
+}
+
+.main-navigation .lebanon-cart:hover,
+.lebanon-mobile-cart .lebanon-cart:hover{
+    background: #BD204B !important;
+}
+
+#lebanon-featured,
+.woocommerce span.onsale{
+    background: #fa2d65;
+    color: #fff;
+}
+#lebanon-featured .fa{
+    color: #fff;
+}
+
+#authica-social a{
+    color: #fa2d65;
+}
+
+#authica-social a:hover{
+    color: #BD204B;
+}
+
+.scroll-top:hover{
+    background: #BD204B;
+}
+
+#lebanon-overlay-trigger{
+    border-color: transparent transparent #fa2d65 transparent;
+}
+
+#lebanon-overlay-trigger{
+    background: #fa2d65;
+}
+
+#lebanon-overlay-trigger:hover{
+    background: #fa2d65;
+}
+
+.lebanon-blog-post{
+    background-color: #fa2d65;
+}
+
