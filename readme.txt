@@ -1,7 +1,7 @@
 === Lebanon ===
 
 Contributors: smartcat
-Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,featured-image-header,featured-images,full-width-template,theme-options,translation-ready,blog,e-commerce,entertainment,photography
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,featured-image-header,featured-images,full-width-template,theme-options,translation-ready,blog,e-commerce,entertainment
 
 Requires at least: 4.4
 Tested up to: 4.6.1
