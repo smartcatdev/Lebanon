@@ -23,9 +23,7 @@
         
         <div class="overlay-widget">
             <div class="row">
-                <?php if (is_active_sidebar('sidebar-overlay')) : ?>
-                    <?php dynamic_sidebar('sidebar-overlay'); ?>
-                <?php endif; ?>
+                <?php get_sidebar( 'overlay' ); ?>
             </div>
         </div>
         

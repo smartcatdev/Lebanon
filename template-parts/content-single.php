@@ -9,11 +9,20 @@
 ?>
 
 <?php if (get_post_thumbnail_id($post->ID)) : ?>
-    <div id="lebanon-page-jumbotron" class="parallax-window" data-parallax="scroll" style="background-image: url(<?php echo esc_url( wp_get_attachment_url(get_post_thumbnail_id($post->ID)) ); ?>)" >
+    <div id="lebanon-page-jumbotron" class="parallax-window table-display" data-parallax="scroll" style="background-image: url(<?php echo esc_url( wp_get_attachment_url(get_post_thumbnail_id($post->ID)) ); ?>)" >
         <div class="overlay"></div>
-        <header class="entry-header">
-            <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-        </header><!-- .entry-header -->
+        
+        <div class="cell-display">
+            <div class="row">
+                <div class="col-sm-12">
+                    <header class="entry-header">
+                        <?php lebanon_entry_footer(); ?>
+                        <?php the_title('<h1 class="text-left entry-title">', '</h1>'); ?>
+                    </header><!-- .entry-header -->                
+                </div>
+            </div>
+        </div>
+
 
     </div>
 <?php endif; ?>
@@ -26,8 +35,6 @@
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
-                <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-
                 <div class="entry-meta">
                     <div class="meta-detail">
 
@@ -35,7 +42,7 @@
 
                         <div class="author"><?php echo get_the_author() ? '<span class="fa fa-user"></span> ' . esc_attr( get_the_author() ) : ' '; ?></div>
 
-                        <div><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'lebanon') : esc_attr( get_comments_number() ) . ' Comments'; ?></div>
+                        <div><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'lebanon') : '<span class="fa fa-comment"></span> ' . esc_attr( get_comments_number() ) . ' Comments'; ?></div>
 
 
                     </div>
@@ -53,10 +60,6 @@
                 ));
                 ?>
             </div><!-- .entry-content -->
-
-            <footer class="entry-footer">
-                <?php lebanon_entry_footer(); ?>
-            </footer><!-- .entry-footer -->
 
             <?php the_post_navigation(); ?>
 

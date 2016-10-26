@@ -1,6 +1,4 @@
-
-
-<div id="lebanon-homepage-widget" data-parallax="scroll" style="background-image: url(<?php echo esc_url( get_theme_mod( 'homepage_widget_background', '/inc/images/widget.jpg' ) ); ?>)">
+<div id="lebanon-homepage-widget" data-parallax="scroll" style="background-image: url(<?php echo esc_url( get_theme_mod( 'homepage_widget_background', get_template_directory_uri() . '/inc/images/widget.jpg' ) ); ?>)">
 
     <div>
         <div class="row">

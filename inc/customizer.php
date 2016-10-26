@@ -45,7 +45,7 @@ function lebanon_customize_register( $wp_customize ) {
     ) );
     
             $wp_customize->add_setting( 'lebanon_the_featured_post', array (
-                'default'               => null,
+                'default'               => 1,
                 'transport'             => 'refresh',
                 'sanitize_callback'     => 'lebanon_sanitize_post',
             ) );
@@ -75,7 +75,7 @@ function lebanon_customize_register( $wp_customize ) {
     ) );
     
             $wp_customize->add_setting( 'lebanon_the_featured_post2', array (
-                'default'               => null,
+                'default'               => 1,
                 'transport'             => 'refresh',
                 'sanitize_callback'     => 'lebanon_sanitize_post',
             ) );

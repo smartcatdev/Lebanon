@@ -34,15 +34,24 @@ body.admin-bar{
 }
 
 .text-right{
-    text-align: right;
+    text-align: right !important;
 }
 
 .text-left{
-    text-align: left;
+    text-align: left !important;
 }
 
 .text-center{
     text-align: center;
+}
+
+.table-display{
+    display: table;
+}
+
+.cell-display{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .noshow{
@@ -207,7 +216,7 @@ ul li{
 
 .site-description{
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 14px;
     padding-top: 0;
 }
@@ -289,7 +298,7 @@ ul li{
 
 #lebanon-add-menu{
     text-align: center;
-    padding: 30px 0;
+    padding: 27px 0;
 }
 
 .sticky #lebanon-add-menu{
@@ -310,10 +319,29 @@ ul li{
 
 #lebanon-header .slicknav_menu{
     float: right;
-    background: #1B1B1B;
+    background: rgb(27, 27, 27);
     display: none;
     position: absolute;
     right: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.slicknav_nav .slicknav_row:hover{
+    background: transparent !important;
+}
+
+.slicknav_nav a:hover{
+    background: transparent !important;
+}
+
+#lebanon-header .slicknav_menu .slicknav_icon-bar{
+    font-size: 30px;
+
+}
+
+.slicknav_btn{
+    background-color: #1b1b1b;
 }
 
 ul.lebanon-nav ul {
@@ -431,7 +459,7 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
 
 /*-- Featured Post --*/
 #lebanon-featured-post{
-    
+    overflow: hidden;
 }
 
 #lebanon-featured-post #slide1{
@@ -738,7 +766,7 @@ input[type="submit"],
 
 .lebanon-footer > div{
     overflow: hidden;
-    background: rgba(0,0,0, 0.2);  
+    background: rgba(0,0,0, 0.6);  
     padding: 55px 0 30px 0px;
     min-height: 350px;
 }
@@ -870,11 +898,12 @@ input[type="submit"],
 }
 
 #lebanon-page-jumbotron .entry-title{
-    margin-top: 150px;
+    /*margin-top: 150px;*/
     text-align: center;
     color: #fff;
     position: relative;
     font-size: 46px;
+    margin: 0;
 }
 
 /*-- 8. Blog --*/
@@ -890,6 +919,43 @@ input[type="submit"],
 
 #main.lebanon-blog .entry-title{
     margin: 8px 0;
+}
+
+.entry-meta{
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.entry-meta .fa{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #4D5051;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 5px;
+}
+
+.entry-meta .entry-date{
+    margin-top: 30px;
+    color: #4D5051;
+    
+}
+
+#lebanon-page-jumbotron .cat-links .fa{
+    color: #fff;    
+}
+
+#lebanon-page-jumbotron .cat-links a{
+    color: #fff;
+    font-size: 18px;
+}
+
+.post-edit-link{
+    display: none;
 }
 
 #main.lebanon-blog .entry-meta .meta-detail{
@@ -967,7 +1033,7 @@ input[type="submit"],
 
 .lebanon-blog-post .post-panel-content{
     padding: 0 15px 15px 15px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.6);
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -1112,14 +1178,14 @@ input[type="submit"],
 
 #lebanon-homepage-widget > div{
     overflow: hidden;
-    background: rgba(10,10,10, 0.75);
+    background: rgba(10,10,10, 0.6);
     padding: 55px 0 40px 0px;
     color: #fff;
     color: rgba(255,255,255,0.9);
     min-height: 300px;
 }
 
-#lebanon-topb .widget_recent_entries ul{
+#lebanon-topb .widget ul{
     padding-left: 0;
     list-style: none;
 }
@@ -1159,7 +1225,7 @@ input[type="submit"],
     #lebanon-header .header-inner,
     #lebanon-header .header-inner{
         background: #1b1b1b;
-        height: 50px;
+        height: 70px;
     }
 
     #lebanon-header .header-inner #lebanon-logo{
@@ -1170,7 +1236,8 @@ input[type="submit"],
     
     #lebanon-header .header-inner #lebanon-logo img{
         
-        max-height: 40px;
+        max-height: 50px;
+            margin-top: 10px;
         
     }
     
@@ -1218,6 +1285,13 @@ input[type="submit"],
 
     }
         
+    .scroll-top{
+        float: none;
+        padding: 10px;
+        display: inline-block;
+        position: initial;
+        margin-top: 20px;
+    }
 }
 
 

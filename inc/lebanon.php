@@ -258,7 +258,7 @@ function lebanon_render_homepage() { ?>
     
     <div id="lebanon-featured-post">
         <div id="lebanon-slider" class="hero">
-            <?php $post_id = get_theme_mod( 'lebanon_the_featured_post', 'nopost' ); ?>
+            <?php $post_id = get_theme_mod( 'lebanon_the_featured_post', 1 ); ?>
             
             <?php if( $post_id ) : ?>
             
@@ -297,7 +297,7 @@ function lebanon_render_homepage() { ?>
 
     <div class="clear"></div>
     
-    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post2' ); ?>
+    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post2', 1 ); ?>
     <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
     <?php if( $the_post ) : ?>
     <div id="lebanon-topa">
@@ -325,7 +325,7 @@ function lebanon_render_homepage() { ?>
     <div class="clear"></div>
     <?php endif; ?>
     
-    <?php if( get_theme_mod('homepage_widget_bool', true ) ) : ?>
+    <?php if( get_theme_mod('homepage_widget_bool', 'on' ) == 'on' ) : ?>
     <div id="lebanon-topb">
         <?php get_sidebar('homepage'); ?>
     </div>
