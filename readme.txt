@@ -5,7 +5,7 @@ Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layou
 
 Requires at least: 4.4
 Tested up to: 4.6.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,13 @@ and sanitization of customizer options
 
 = 1.0.5 - Oct 4th, 2016
 * code cleanup
+
+= 1.0.6 - Oct 4th, 2016
+* callout widget is now pulling data from post, not customizer
+* code cleanup
+* updated tags
+* updated theme URI
+
 
 == Credits ==
 

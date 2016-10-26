@@ -58,6 +58,10 @@ input[type="submit"],
     background: #BD204B;
 }
 
+.entry-meta .fa{
+    background: #fa2d65;
+}
+
 .woocommerce .woocommerce-message{
     border-top-color: #fa2d65;
 }

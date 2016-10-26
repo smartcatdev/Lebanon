@@ -864,7 +864,7 @@ input[type="submit"],
 }
 
 #lebanon-sidebar .widget-title{
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     margin: 0 0 15px 0;
 }
@@ -928,15 +928,15 @@ input[type="submit"],
 
 .entry-meta .fa{
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 21px;
+    height: 21px;
     background: #4D5051;
     color: #fff;
     border-radius: 100%;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    line-height: 25px;
-    margin-bottom: 5px;
+    line-height: 21px;
+    margin-bottom: 1px;
 }
 
 .entry-meta .entry-date{
@@ -985,8 +985,8 @@ input[type="submit"],
     border: 3px solid #fff;
 }
 
-.lebanon-blog-post .post-panel-content{
-    
+.lebanon-blog-post .entry-meta .entry-date{
+    color: #fff;
 }
 
 @media( min-width: 769px ) {
@@ -1040,7 +1040,7 @@ input[type="submit"],
     position: absolute;
     left: 0;
     bottom: 0;
-    /*display: none;*/
+    transition: 0.2s all ease-in-out;
     color: #fff;
 
 }

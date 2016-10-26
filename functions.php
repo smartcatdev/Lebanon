@@ -19,7 +19,7 @@ function lebanon_setup() {
     
     
         if( !defined( 'LEBANON_VERSION' ) ) :
-            define('LEBANON_VERSION', '1.0.5');
+            define('LEBANON_VERSION', '1.0.6');
         endif;
     
         
