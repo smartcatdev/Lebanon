@@ -1,42 +1,5 @@
 jQuery(document).ready(function ($) {
 
-    function get_height() {
-
-        if (jQuery(window).width() < 601) {
-
-            return jQuery(window).height();
-        } else {
-            return jQuery(window).height();
-        }
-
-
-    }
-
-    lebanon_slider();
-
-    function lebanon_slider() {
-
-        var height = get_height();
-
-        if( jQuery('#lebanon-slider').length ) {
-            jQuery('#lebanon-slider').camera({
-                height: '500',
-                loader: 'bar',
-                overlay: false,
-                fx: 'simpleFade',
-                pagination: false,
-                thumbnails: false,
-                transPeriod: 1000,
-                overlayer: true,
-                playPause: false,
-                hover: false,
-            });
-        }
-    }
-});
-
-jQuery(document).ready(function ($) {
-
     $('#lebanon-featured .featured-box').click(function () {
 
         window.location.href = $(this).attr('data-target');

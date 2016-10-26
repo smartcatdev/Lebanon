@@ -64,17 +64,12 @@ input[type="submit"],
 
 .main-navigation .lebanon-cart,
 .lebanon-mobile-cart .lebanon-cart{
-    background: #f1c40f !important;
     transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -webkit-transition: 0.25s all ease-in-out;
     top: -5px;
 }
 
-.main-navigation .lebanon-cart:hover,
-.lebanon-mobile-cart .lebanon-cart:hover{
-    background: #f5d313 !important;
-}
 
 #lebanon-featured,
 .woocommerce span.onsale{

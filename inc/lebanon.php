@@ -28,12 +28,12 @@ function lebanon_scripts() {
     
     $fonts = lebanon_fonts();
     
-    if( array_key_exists ( get_theme_mod('header_font', 'Raleway, sans-serif'), $fonts ) ) :
-        wp_enqueue_style('lebanon-font-header', '//fonts.googleapis.com/css?family=' . $fonts[get_theme_mod('header_font', 'Raleway, sans-serif')], array(), LEBANON_VERSION );
+    if( array_key_exists ( get_theme_mod('header_font', 'Montserrat, sans-serif'), $fonts ) ) :
+        wp_enqueue_style('lebanon-font-header', '//fonts.googleapis.com/css?family=' . $fonts[get_theme_mod('header_font', 'Montserrat, sans-serif')], array(), LEBANON_VERSION );
     endif;
     
-    if( array_key_exists ( get_theme_mod('theme_font', 'Raleway, sans-serif'), $fonts ) ) :
-        wp_enqueue_style('lebanon-font-general', '//fonts.googleapis.com/css?family=' . $fonts[get_theme_mod('theme_font', 'Raleway, sans-serif')], array(), LEBANON_VERSION );
+    if( array_key_exists ( get_theme_mod('theme_font', 'Lato, sans-serif'), $fonts ) ) :
+        wp_enqueue_style('lebanon-font-general', '//fonts.googleapis.com/css?family=' . $fonts[get_theme_mod('theme_font', 'Lato, sans-serif')], array(), LEBANON_VERSION );
     endif;
     
 
@@ -107,7 +107,7 @@ function lebanon_widgets_init() {
     ));
 
     register_sidebar(array(
-        'name' => esc_html__('Homepage', 'lebanon'),
+        'name' => esc_html__('Top B - Homepage widget', 'lebanon'),
         'id' => 'sidebar-homepage',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s col-sm-12">',
@@ -255,23 +255,60 @@ add_action('wp_head', 'lebanon_custom_css');
 
 function lebanon_render_homepage() { ?>
 
+    
+    <div id="lebanon-featured-post">
+        <div id="lebanon-slider" class="hero">
+            <?php $post_id = get_theme_mod( 'lebanon_the_featured_post', 'nopost' ); ?>
+            
+            <?php if( $post_id ) : ?>
+            
+            <div id="slide1" style="background-image: url(<?php echo esc_url(lebanon_get_post_thumb( $post_id ) ); ?>)">
+
+                <div class="overlay"></div>
+                <div class="row">
+                    <div class="col-sm-12 slide-details">
+
+                        <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>">
+                            <h2 class="header-text animated fadeInDown slide1-header"><?php echo ( get_the_title( $post_id ) ? esc_attr( get_the_title( $post_id ) ) : '' ); ?></h2>
+                        </a>
+
+                        <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>" 
+                           class="animated fadeInUp delay3 lebanon-button primary">
+                            <?php echo esc_attr( get_theme_mod( 'lebanon_the_featured_post_button', __( 'Continue reading', 'lebanon' )  ) ); ?>
+                        </a>
+
+
+                    </div>
+
+                </div>
+                
+                <div class="slider-bottom">
+                    <div>
+                        <span class="fa fa-chevron-down scroll-down animated slideInUp delay-long"></span>
+                    </div>
+                </div>
+
+            </div>
+            <?php endif; ?>
+            
+        </div>
+    </div>
 
 
     <div class="clear"></div>
-
+    
+    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post2' ); ?>
+    <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
+    <?php if( $the_post ) : ?>
     <div id="lebanon-topa">
         
         <div class="row text-center">
             <div class="col-sm-12">
                 
-                <p class="sub-heading">
-                    <?php echo esc_attr( get_theme_mod( 'topa_subheading_text', __( 'Professional, Elegant, Easy to use', 'lebanon' )  ) ); ?>
-                </p>
-                
-                <h3 class="heading"><?php echo esc_attr( get_theme_mod( 'topa_heading_text', __( 'Lebanon WordPress Theme', 'lebanon' )  ) ); ?></h3>
+                <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
                 
                 <p class="description">
-                    <?php echo esc_attr( get_theme_mod( 'topa_desc_text', __( 'This is the content of the Top A Callout Area, you can modify thist text from Customizer - Frontpage - Top A Callout Area', 'lebanon' )  ) ); ?>
+                    <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
                 </p>
                 
             </div>            
@@ -279,20 +316,24 @@ function lebanon_render_homepage() { ?>
         
         <div class="row text-center">
             <div class="col-sm-12">
-                <img src="<?php echo esc_url( get_theme_mod( 'topa_image', get_template_directory_uri() . '/inc/images/lebanon.jpg'  ) ); ?>"/>
+                <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id ); ?></a>
             </div>
         </div>        
 
     </div>
     
     <div class="clear"></div>
+    <?php endif; ?>
     
-    <div id="lebanon-topb"></div>
+    <?php if( get_theme_mod('homepage_widget_bool', true ) ) : ?>
+    <div id="lebanon-topb">
+        <?php get_sidebar('homepage'); ?>
+    </div>
     
     <div class="clear"></div>
+    <?php endif; ?>
     
     
-    <?php get_sidebar('homepage'); ?>
 
     
     <?php
@@ -327,11 +368,7 @@ function lebanon_render_tab_clicker() { ?>
             
         </div>
 
-        <div class="slider-bottom">
-            <div>
-                <span class="fa fa-chevron-down scroll-down animated slideInUp delay-long"></span>
-            </div>
-        </div>
+
         
         
     </div>

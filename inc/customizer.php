@@ -39,10 +39,53 @@ function lebanon_customize_register( $wp_customize ) {
         'priority'              => 10
     ) );
 
-    $wp_customize->add_section( 'homepage_topa', array (
-        'title'                 => __( 'Top A - Callout Area', 'lebanon' ),
+    $wp_customize->add_section( 'homepage_jumbotron', array (
+        'title'                 => __( 'Featured Post/Page/Product', 'lebanon' ),
         'panel'                 => 'homepage',
     ) );
+    
+            $wp_customize->add_setting( 'lebanon_the_featured_post', array (
+                'default'               => null,
+                'transport'             => 'refresh',
+                'sanitize_callback'     => 'lebanon_sanitize_post',
+            ) );
+            $wp_customize->add_control( 'lebanon_the_featured_post', array(
+                'type'                  => 'select',
+                'section'               => 'homepage_jumbotron',
+                'label'                 => __( 'Select the Featured Post', 'lebanon' ),
+                'choices'               => lebanon_all_posts_array(),
+            ) );
+    
+            $wp_customize->add_setting( 'lebanon_the_featured_post_button', array (
+                'default'               => __( 'Read More', 'lebanon' ),
+                'transport'             => 'refresh',
+                'sanitize_callback'     => 'lebanon_sanitize_text',
+            ) );
+            $wp_customize->add_control( 'lebanon_the_featured_post_button', array(
+                'type'                  => 'text',
+                'section'               => 'homepage_jumbotron',
+                'label'                 => __( 'Button Text', 'lebanon' ),
+            ) );
+            
+    
+
+    $wp_customize->add_section( 'homepage_topa', array (
+        'title'                 => __( 'Top A - Featured Page/Post/Product', 'lebanon' ),
+        'panel'                 => 'homepage',
+    ) );
+    
+            $wp_customize->add_setting( 'lebanon_the_featured_post2', array (
+                'default'               => null,
+                'transport'             => 'refresh',
+                'sanitize_callback'     => 'lebanon_sanitize_post',
+            ) );
+            $wp_customize->add_control( 'lebanon_the_featured_post2', array(
+                'type'                  => 'select',
+                'section'               => 'homepage_topa',
+                'label'                 => __( 'Select the Featured Post', 'lebanon' ),
+                'choices'               => lebanon_all_posts_array(),
+            ) );
+
     
 
     $wp_customize->add_section( 'homepage_widget', array (
@@ -50,26 +93,41 @@ function lebanon_customize_register( $wp_customize ) {
         'panel'                 => 'homepage',
     ) );
     
-    // Widget
-    $wp_customize->add_setting( 'homepage_widget_background', array (
-        'default'               => get_template_directory_uri() . '/inc/images/widget.jpg',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'esc_url_raw'
-    ) );
 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control5', array (
-        'label' =>              __( 'Widget Background', 'lebanon' ),
-        'section'               => 'homepage_widget',
-        'mime_type'             => 'image',
-        'settings'              => 'homepage_widget_background',
-        'description'           => __( 'Select the image file that you would like to use as the background image', 'lebanon' ),        
-    ) ) );
+        $wp_customize->add_setting( 'homepage_widget_bool', array (
+            'default'               => 'on',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'lebanon_radio_sanitize_onoff'
+        ) );
+
+       $wp_customize->add_control( 'homepage_widget_bool', array(
+            'label'   => __( 'Enable Homepage Top B Widget', 'lebanon' ),
+            'section' => 'homepage_widget',
+            'type'    => 'radio',
+            'choices'    => array(
+                'on'    => __( 'Show', 'lebanon' ),
+                'off'    => __( 'Hide', 'lebanon' )
+            )
+        ));
+    
+        $wp_customize->add_setting( 'homepage_widget_background', array (
+            'default'               => get_template_directory_uri() . '/inc/images/widget.jpg',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'esc_url_raw'
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control5', array (
+            'label' =>              __( 'Widget Background', 'lebanon' ),
+            'section'               => 'homepage_widget',
+            'mime_type'             => 'image',
+            'settings'              => 'homepage_widget_background',
+            'description'           => __( 'Select the image file that you would like to use as the background image', 'lebanon' ),        
+        ) ) );
     
     
 
     $wp_customize->add_section( 'homepage_overlay', array (
-        'title'                 => __( 'Overlay', 'lebanon' ),
-        'description'           => __( 'The overlay appears after the user clicks the icon on the bottom-right of the slider', 'lebanon' ),
+        'title'                 => __( 'Frontpage Overlay', 'lebanon' ),
         'panel'                 => 'homepage',
     ) );
 
@@ -129,58 +187,6 @@ function lebanon_customize_register( $wp_customize ) {
             ) ) 
     );
    
-    // top a
-    $wp_customize->add_setting( 'topa_subheading_text', array (
-        'default'               => __('Professional, Elegant, Easy to Use', 'lebanon' ),
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'lebanon_sanitize_text'
-    ) );
-    
-   $wp_customize->add_control( 'topa_subheading_text', array(
-        'label'   => __( 'Subtitle', 'lebanon' ),
-        'section' => 'homepage_topa',
-        'type'    => 'text',
-    ));
-   
-    $wp_customize->add_setting( 'topa_heading_text', array (
-        'default'               => __('Lebanon WordPress Theme', 'lebanon' ),
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'lebanon_sanitize_text'
-    ) );
-    
-   $wp_customize->add_control( 'topa_heading_text', array(
-        'label'   => __( 'Title', 'lebanon' ),
-        'section' => 'homepage_topa',
-        'type'    => 'text',
-    ));
-   
-    $wp_customize->add_setting( 'topa_desc_text', array (
-        'default'               => __('Professional, Elegant, Easy to Use', 'lebanon' ),
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'lebanon_sanitize_text'
-    ) );
-    
-   $wp_customize->add_control( 'topa_desc_text', array(
-        'label'   => __( 'Title', 'lebanon' ),
-        'section' => 'homepage_topa',
-        'type'    => 'textarea',
-    ));
-   
-    $wp_customize->add_setting( 'topa_image', array (
-        'default'               => get_template_directory_uri() . '/inc/images/lebanon.jpg',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'esc_url_raw'
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control21', array (
-        'label' =>              __( 'Image', 'lebanon' ),
-        'section'               => 'homepage_topa',
-        'mime_type'             => 'image',
-        'settings'              => 'topa_image',
-        'description'           => __( 'Select the image you want featured in Top-A Section', 'lebanon' ),        
-    ) ) );   
-   
-    
     // *********************************************
     // ****************** Apperance *****************
     // *********************************************
@@ -251,7 +257,7 @@ function lebanon_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'header_font', array (
-        'default'               => 'Raleway, sans-serif',
+        'default'               => 'Montserrat, sans-serif',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'lebanon_sanitize_font'
     ) );
@@ -266,7 +272,7 @@ function lebanon_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'theme_font', array (
-        'default'               => 'Raleway, sans-serif',
+        'default'               => 'Lato, sans-serif',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'lebanon_sanitize_font'
     ) );
@@ -636,6 +642,15 @@ function lebanon_sanitize_integer( $input ) {
 
 function lebanon_sanitize_icon( $input ) {
     $valid_keys = lebanon_icons();
+    if ( array_key_exists( $input, $valid_keys ) ) {
+     return $input;
+   } else {
+     return '';
+   }
+}
+
+function lebanon_sanitize_post( $input ) {
+    $valid_keys = lebanon_all_posts_array();
     if ( array_key_exists( $input, $valid_keys ) ) {
      return $input;
    } else {

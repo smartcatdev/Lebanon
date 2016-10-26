@@ -41,7 +41,11 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt{
+.woocommerce a.button.alt,
+.woocommerce ul.products li.product .button,
+.button.wc-backward{
+    background-color: #fa2d65 !important;
+    color: #fff !important;
     background: #fa2d65;
     color: #fff;
 }
@@ -64,17 +68,12 @@ input[type="submit"],
 
 .main-navigation .lebanon-cart,
 .lebanon-mobile-cart .lebanon-cart{
-    background: #fa2d65 !important;
     transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -webkit-transition: 0.25s all ease-in-out;
     top: -5px;
 }
 
-.main-navigation .lebanon-cart:hover,
-.lebanon-mobile-cart .lebanon-cart:hover{
-    background: #BD204B !important;
-}
 
 #lebanon-featured,
 .woocommerce span.onsale{

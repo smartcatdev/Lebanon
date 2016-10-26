@@ -14,10 +14,16 @@ if (!defined('ABSPATH'))
 get_header('shop');
 ?>
 
-<div class="row">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main lebanon-page" role="main">
 
-
-    <header id="title_bread_wrap" class="entry-header">
+        
+        
+        
+    <div class="row">
+        
+        
+    <header id="title_bread_wrap" class="entry-header col-sm-12">
         <div class="ak-container">		
             <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
 
@@ -39,7 +45,8 @@ get_header('shop');
             <?php do_action('woocommerce_archive_description'); ?>
         </div>
     </header>
-    <div class="inner">
+
+        
         <div class="ak-container left-sidebar">
             <?php
             /**
@@ -110,6 +117,7 @@ get_header('shop');
         </div>
     </div>
 
+</main>
 </div>
 
 

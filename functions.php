@@ -67,7 +67,6 @@ function lebanon_setup() {
 		'search-form',
 		'comment-form',
 		'comment-list',
-		'gallery',
 		'caption',
 	) );
 
