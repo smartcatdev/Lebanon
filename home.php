@@ -6,6 +6,9 @@
  * @package Lebanon
  */
 get_header();
+
+lebanon_featured_post();
+
 ?>
 
 
