@@ -5,7 +5,7 @@ Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layou
 
 Requires at least: 4.4
 Tested up to: 4.6.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,13 @@ and sanitization of customizer options
 * code cleanup
 * updated tags
 * updated theme URI
+
+= 1.0.7 - Nov 6th, 2016
+* Fix a few issues with some color themes
+* Fix 404
+* adjust scroll distance of arrow-down on frontpage featured post
+
+
 
 
 == Credits ==
