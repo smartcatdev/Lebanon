@@ -18,7 +18,7 @@ get_header();
         
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="entry-title"><?php the_archive_title(); ?></h1>
+                <h1 class="entry-title"><?php single_post_title(); ?></h1>
             </div>
             
             <div class="frontpage-blog homepage-page-content col-sm-12">

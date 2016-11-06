@@ -1,37 +1,29 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Oct 5, 2015, 10:58:37 AM
-    Author     : Bilal
-*/
+
 
 a,a:visited{
-    color: #36B3A8;
+    color: #e94736;
 }
 
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #ec7063;
+    color: #d44233;
 }
 
 ul.lebanon-nav > li.menu-item.current-menu-item a,
 ul.lebanon-nav > li.menu-item.current-menu-parent a,
 ul.lebanon-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #ec7063;
+    border-bottom: 2px solid #d44233;
 
 }
 
 ul.lebanon-nav > li > ul li.current-menu-item > a{
-    color: #36B3A8;
+    color: #e94736;
 }
 
 ul.lebanon-nav ul li a:hover{
-    color: #ec7063;
+    color: #d44233;
 }
 
 .lebanon-button.primary,
@@ -41,25 +33,38 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt{
-    background: #36B3A8;
+.woocommerce a.button.alt,
+.woocommerce ul.products li.product .button,
+.button.wc-backward{
+    background-color: #e94736 !important;
+    color: #fff !important;
+    background: #e94736;
     color: #fff;
 }
 
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover,
 .lebanon-button.primary:hover,
+.button.wc-backward:hover,
+.woocommerce ul.products li.product .button:hover,
 .woocommerce button.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover{
-    background: #ec7063;
+    background: #d44233 !important;
+}
+
+.entry-meta .fa{
+    background: #e94736;
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #36B3A8;
+    border-top-color: #e94736;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #36B3A8;
+    color: #e94736;
 }
 
 .main-navigation .lebanon-cart,
@@ -70,23 +75,40 @@ input[type="submit"],
     top: -5px;
 }
 
+
 #lebanon-featured,
 .woocommerce span.onsale{
-    background: #36B3A8;
+    background: #e94736;
     color: #fff;
 }
 #lebanon-featured .fa{
     color: #fff;
 }
 
+#authica-social a{
+    color: #e94736;
+}
+
 #authica-social a:hover{
-    color: #ec7063;
+    color: #d44233;
 }
 
 .scroll-top:hover{
-    background: #ec7063;
+    background: #d44233;
 }
 
 #lebanon-overlay-trigger{
-    border-color: transparent transparent #36B3A8 transparent;
+    border-color: transparent transparent #e94736 transparent;
+}
+
+#lebanon-overlay-trigger{
+    background: #e94736;
+}
+
+#lebanon-overlay-trigger:hover{
+    background: #d44233;
+}
+
+.lebanon-blog-post{
+    background-color: #e94736;
 }

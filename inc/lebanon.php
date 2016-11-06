@@ -253,8 +253,8 @@ function lebanon_custom_css() {
 add_action('wp_head', 'lebanon_custom_css');
 
 
-function lebanon_render_homepage() { ?>
 
+function lebanon_featured_post() { ?>
     
     <div id="lebanon-featured-post">
         <div id="lebanon-slider" class="hero">
@@ -296,6 +296,14 @@ function lebanon_render_homepage() { ?>
 
 
     <div class="clear"></div>
+    
+<?php }
+
+function lebanon_render_homepage() { 
+    
+    lebanon_featured_post();
+    
+    ?>
     
     <?php $post_id = get_theme_mod( 'lebanon_the_featured_post2', 1 ); ?>
     <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>

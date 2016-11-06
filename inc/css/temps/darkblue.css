@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Oct 12, 2015, 11:17:31 PM
-    Author     : Bilal
-*/
-
 
 
 a,a:visited{
@@ -17,15 +7,23 @@ a,a:visited{
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #415b76;
+    color: #293a4b;
 }
 
 ul.lebanon-nav > li.menu-item.current-menu-item a,
 ul.lebanon-nav > li.menu-item.current-menu-parent a,
 ul.lebanon-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #34495e;
+    border-bottom: 2px solid #293a4b;
 
+}
+
+ul.lebanon-nav > li > ul li.current-menu-item > a{
+    color: #34495e;
+}
+
+ul.lebanon-nav ul li a:hover{
+    color: #293a4b;
 }
 
 .lebanon-button.primary,
@@ -35,25 +33,38 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt{
+.woocommerce a.button.alt,
+.woocommerce ul.products li.product .button,
+.button.wc-backward{
+    background-color: #34495e !important;
+    color: #fff !important;
     background: #34495e;
     color: #fff;
 }
 
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover,
 .lebanon-button.primary:hover,
+.button.wc-backward:hover,
+.woocommerce ul.products li.product .button:hover,
 .woocommerce button.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover{
-    background: #415b76;
+    background: #293a4b !important;
+}
+
+.entry-meta .fa{
+    background: #34495e;
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #415b76;
+    border-top-color: #34495e;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #415b76;
+    color: #34495e;
 }
 
 .main-navigation .lebanon-cart,
@@ -74,14 +85,30 @@ input[type="submit"],
     color: #fff;
 }
 
-#authica-social a:hover{
+#authica-social a{
     color: #34495e;
 }
 
+#authica-social a:hover{
+    color: #293a4b;
+}
+
 .scroll-top:hover{
-    background: #34495e;
+    background: #293a4b;
 }
 
 #lebanon-overlay-trigger{
     border-color: transparent transparent #34495e transparent;
+}
+
+#lebanon-overlay-trigger{
+    background: #34495e;
+}
+
+#lebanon-overlay-trigger:hover{
+    background: #293a4b;
+}
+
+.lebanon-blog-post{
+    background-color: #34495e;
 }

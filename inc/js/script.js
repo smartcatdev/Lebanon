@@ -86,7 +86,7 @@ jQuery(document).ready(function ($) {
     $('.scroll-down').click(function () {
 
         $("html, body").animate({
-            scrollTop: ($(window).height() - 85)
+            scrollTop: ($('#lebanon-featured-post').height() + 85 )
         }, 1000);
 
         return false;

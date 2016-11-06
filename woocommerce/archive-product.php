@@ -12,6 +12,8 @@ if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
 get_header('shop');
+
+//lebanon_featured_post();
 ?>
 
 <div id="primary" class="content-area">

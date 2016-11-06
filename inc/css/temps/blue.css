@@ -1,15 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Oct 5, 2015, 10:57:12 AM
-    Author     : Bilal
-*/
-
-
-
 
 a,a:visited{
     color: #3498db;
@@ -18,14 +6,14 @@ a,a:visited{
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #5dade2;
+    color: #2d86c2;
 }
 
 ul.lebanon-nav > li.menu-item.current-menu-item a,
 ul.lebanon-nav > li.menu-item.current-menu-parent a,
 ul.lebanon-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #5dade2;
+    border-bottom: 2px solid #2d86c2;
 
 }
 
@@ -34,7 +22,7 @@ ul.lebanon-nav > li > ul li.current-menu-item > a{
 }
 
 ul.lebanon-nav ul li a:hover{
-    color: #5dade2;
+    color: #2d86c2;
 }
 
 .lebanon-button.primary,
@@ -44,17 +32,30 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt{
+.woocommerce a.button.alt,
+.woocommerce ul.products li.product .button,
+.button.wc-backward{
+    background-color: #3498db !important;
+    color: #fff !important;
     background: #3498db;
     color: #fff;
 }
 
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover,
 .lebanon-button.primary:hover,
+.button.wc-backward:hover,
+.woocommerce ul.products li.product .button:hover,
 .woocommerce button.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover{
-    background: #5dade2;
+    background: #2d86c2 !important;
+}
+
+.entry-meta .fa{
+    background: #3498db;
 }
 
 .woocommerce .woocommerce-message{
@@ -83,14 +84,31 @@ input[type="submit"],
     color: #fff;
 }
 
+#authica-social a{
+    color: #3498db;
+}
+
 #authica-social a:hover{
-    color: #5dade2;
+    color: #2d86c2;
 }
 
 .scroll-top:hover{
-    background: #5dade2;
+    background: #2d86c2;
 }
 
 #lebanon-overlay-trigger{
     border-color: transparent transparent #3498db transparent;
 }
+
+#lebanon-overlay-trigger{
+    background: #3498db;
+}
+
+#lebanon-overlay-trigger:hover{
+    background: #2d86c2;
+}
+
+.lebanon-blog-post{
+    background-color: #3498db;
+}
+
