@@ -90,7 +90,7 @@ function lebanon_widgets_init() {
         'name' => esc_html__('Footer', 'lebanon'),
         'id' => 'sidebar-footer',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s col-sm-4">',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s col-sm-4 animated reveal fadeIn">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
@@ -259,7 +259,7 @@ function lebanon_custom_css() {
         }
         
         #lebanon-featured-post #slide1{
-            height: <?php echo esc_attr( get_theme_mod('lebanon_jumbotron_height', 650 ) ); ?>px;
+            height: <?php echo esc_attr( get_theme_mod('lebanon_jumbotron_height', 450 ) ); ?>px;
         }
         
         #masthead.site-header,
@@ -416,7 +416,7 @@ function lebanon_custom_css() {
                 n++;
                 setTimeout(function () {
                     typeWriter(text, n)
-                }, 100 );
+                }, 125 );
             }else {
                 $('#lebanon-featured-post #slide1 span.header-inner').addClass('typewriter-done')
             }
@@ -450,23 +450,25 @@ function lebanon_featured_post() { ?>
                     <div id="slide1" style="<?php echo has_post_thumbnail( $post_id) ? 'background-image: url(' . esc_url(lebanon_get_post_thumb( $post_id ) ) . ')' : ''; ?>">
                 <?php endif; ?>
                     <div class="overlay"></div>
-                    <div class="row">
-                        <div class="col-sm-12 slide-details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 slide-details">
 
-                            <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>">
-                                <h2 class="header-text animated fadeInDown slide1-header">
-                                    <span class="header-inner"><?php echo ( get_the_title( $post_id ) ? esc_attr( get_the_title( $post_id ) ) : '' ); ?></span>
-                                </h2>
-                            </a>
+                                <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>">
+                                    <h2 class="header-text slide1-header">
+                                        <span class="header-inner"><?php echo ( get_the_title( $post_id ) ? esc_attr( get_the_title( $post_id ) ) : '' ); ?></span>
+                                    </h2>
+                                </a>
 
-                            <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>" 
-                               class="animated fadeInUp delay3 lebanon-button primary">
-                                <?php echo esc_attr( get_theme_mod( 'lebanon_the_featured_post_button', __( 'Continue reading', 'lebanon' )  ) ); ?>
-                            </a>
+                                <a href="<?php echo get_the_permalink( $post_id ) ? esc_url( get_the_permalink( $post_id ) ) : null; ?>" 
+                                   class="animated fadeInUp delay3 lebanon-button primary">
+                                    <?php echo esc_attr( get_theme_mod( 'lebanon_the_featured_post_button', __( 'Continue reading', 'lebanon' )  ) ); ?>
+                                </a>
 
+
+                            </div>
 
                         </div>
-
                     </div>
 
                     <div class="slider-bottom">
@@ -488,11 +490,7 @@ function lebanon_featured_post() { ?>
 
 function lebanon_render_homepage() { 
     
-    if( get_theme_mod( 'lebanon_the_featured_post_toggle', 'on' ) == 'on' ) :
-    
-        lebanon_featured_post();
-    
-    endif;
+    lebanon_jumbotron_init();
     
     ?>
     
@@ -500,23 +498,25 @@ function lebanon_render_homepage() {
     <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
     <?php if( $the_post && get_theme_mod('lebanon_the_featured_post2_toggle', 'on' ) == 'on' ) : ?>
     <div id="lebanon-topa">
-        
-        <div class="row text-center">
-            <div class="col-sm-12">
-                
-                <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
-                
-                <p class="description">
-                    <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
-                </p>
-                
-            </div>            
-        </div>
-        
-        <div class="row text-center">
-            <div class="col-sm-12">
-                <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id ); ?></a>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12 reveal animated fadeInUp">
+
+                    <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
+
+                    <p class="description">
+                        <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
+                    </p>
+
+                </div>            
             </div>
+        </div>
+        <div class="container">        
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id, 'medium' ); ?></a>
+                </div>
+            </div>        
         </div>        
 
     </div>
@@ -533,93 +533,130 @@ function lebanon_render_homepage() {
     <?php if( get_theme_mod('homepage_topc_toggle', 'on' ) == 'on' ) : ?>
     
     <div id="lebanon-topc">
-        <div class="row">
-            <div class="col-sm-4">
-                
-                <?php $post_id = get_theme_mod( 'lebanon_the_featured_post3', 1 ); ?>
-                <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
-                <?php if( $the_post ) : ?>
-                
-                    <div class="row text-center">
-                        <div class="col-sm-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
 
-                            <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
+                    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post3', 1 ); ?>
+                    <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
+                    <?php $post_icon = get_theme_mod( 'homepage_topc_icon_toggle', false ) == 'on' ? true : false; ?>
+                    <?php if( $the_post ) : ?>
 
-                            <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id ); ?></a>
+                        <div class="row text-center">
+                            <div class="col-sm-12 reveal animated fadeInLeft">
 
-                            <p class="description">
-                                <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
-                            </p>
-                            
-                            <div class="center">
-                                <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?></a>
-                            </div>
-                            
-                        </div>            
-                    </div>
+                                <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
 
-                <?php endif; ?>
-                
+                                <?php if( $post_icon ) : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <span class="<?php echo get_theme_mod( 'lebanon_the_featured_post3_icon', 'fa fa-paint-brush' ); ?>"></span>
+                                    </a>
+                                <?php else : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_the_post_thumbnail( $post_id ); ?>
+                                    </a>                                
+                                <?php endif; ?>
+                                
+                                <p class="description">
+                                    <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
+                                </p>
+                                
+                                <?php if( get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ) ) : ?>
+                                <div class="center">
+                                    <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?>
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+
+                            </div>            
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
+                <div class="col-sm-4">
+
+                    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post4', 1 ); ?>
+                    <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
+                    <?php $post_icon = get_theme_mod( 'homepage_topc_icon_toggle', false ) == 'on' ? true : false; ?>
+                    <?php if( $the_post ) : ?>
+
+                        <div class="row text-center ">
+                            <div class="col-sm-12 reveal animated fadeInUp">
+
+                                <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
+
+                                <?php if( $post_icon ) : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <span class="<?php echo get_theme_mod( 'lebanon_the_featured_post4_icon', 'fa fa-desktop' ); ?>"></span>
+                                    </a>
+                                <?php else : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_the_post_thumbnail( $post_id ); ?>
+                                    </a>                                
+                                <?php endif; ?>
+                                
+                                <p class="description">
+                                    <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
+                                </p>
+                                
+                                <?php if( get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ) ) : ?>
+                                <div class="center">
+                                    <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?>
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+
+                            </div>            
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
+                <div class="col-sm-4">
+
+                    <?php $post_id = get_theme_mod( 'lebanon_the_featured_post5', 1 ); ?>
+                    <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
+                    <?php $post_icon = get_theme_mod( 'homepage_topc_icon_toggle', false ) == 'on' ? true : false; ?>
+                    <?php if( $the_post ) : ?>
+
+                        <div class="row text-center">
+                            <div class="col-sm-12 reveal animated fadeInRight">
+
+                                <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
+
+                                <?php if( $post_icon ) : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <span class="<?php echo get_theme_mod( 'lebanon_the_featured_post5_icon', 'fa fa-bar-chart' ); ?>"></span>
+                                    </a>
+                                <?php else : ?>
+                                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_the_post_thumbnail( $post_id ); ?>
+                                    </a>                                
+                                <?php endif; ?>
+                                
+                                <p class="description">
+                                    <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
+                                </p>
+                                
+                                <?php if( get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ) ) : ?>
+                                <div class="center">
+                                    <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
+                                        <?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?>
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+
+                            </div>            
+                        </div>
+
+                    <?php endif; ?>
+                    
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="col-sm-4">
-                
-                <?php $post_id = get_theme_mod( 'lebanon_the_featured_post4', 1 ); ?>
-                <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
-                <?php if( $the_post ) : ?>
-                
-                    <div class="row text-center">
-                        <div class="col-sm-12">
-
-                            <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
-
-                            <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id ); ?></a>
-
-                            <p class="description">
-                                <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
-                            </p>
-                            
-                            <div class="center">
-                                <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?></a>
-                            </div>
-
-                        </div>            
-                    </div>
-
-                <?php endif; ?>
-                
-            </div>
-            <div class="col-sm-4">
-                
-                <?php $post_id = get_theme_mod( 'lebanon_the_featured_post5', 1 ); ?>
-                <?php $the_post = $post_id ? get_post( $post_id ) : null; ?>
-                <?php if( $the_post ) : ?>
-                
-                    <div class="row text-center">
-                        <div class="col-sm-12">
-
-                            <h3 class="heading"><?php echo esc_attr( $the_post->post_title ); ?></h3>
-
-                            <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id ); ?></a>
-
-                            <p class="description">
-                                <?php echo esc_html( wp_trim_words( $the_post->post_content, 40 ) ); ?>
-                            </p>
-                            
-                            <div class="center">
-                                <a class="animated fadeInUp delay3 lebanon-button primary" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_theme_mod( 'homepage_topc_button', __( 'Learn more', 'lebanon' ) ); ?></a>
-                            </div>
-
-                        </div>            
-                    </div>
-
-                
-                <?php endif; ?>
-                
-                
-                
-            </div>
-            <div class="clear"></div>
-            <hr>
         </div>
         
     </div>
@@ -628,7 +665,7 @@ function lebanon_render_homepage() {
     
     <div class="clear"></div>
     
-    
+    <?php do_action( 'lebanon_top_widgets' ); ?>
     
 
     
@@ -672,134 +709,44 @@ function lebanon_render_footer(){ ?>
     
     <div class="lebanon-footer" class="parallax-window" data-parallax="scroll" style="background-image: url(<?php echo esc_attr( get_theme_mod('footer_background_image', get_template_directory_uri() . '/inc/images/footer.jpg' ) ); ?>)">
         <div>
-            <div class="row">
-                <?php get_sidebar('footer'); ?>
+            <div class="container">
+                <div class="row">
+                    <?php get_sidebar('footer'); ?>
+                </div>            
             </div>            
         </div>
-
-        
     </div>
     
     <div class="clear"></div>
     
     <?php endif; ?>
     
+    <?php do_action( 'lebanon_pre_footer' ); ?>
+    
     <div class="site-info">
         
-        <div class="row">
-            
-            <div class="lebanon-copyright">
-                <?php echo ( get_theme_mod( 'copyright_text' ) ); ?>
-            </div>
-            
-            <div id="authica-social">
-                
-                <?php if( get_theme_mod( 'facebook_url' ) != '' ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'facebook_url' ) ); ?>" target="_BLANK" class="lebanon-facebook">
-                    <span class="fa fa-facebook"></span>
-                </a>
-                <?php endif; ?>
-                
-                
-                <?php if( get_theme_mod( 'gplus_url' ) != '' ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'gplus_url' ) ); ?>" target="_BLANK" class="lebanon-gplus">
-                    <span class="fa fa-google-plus"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'instagram_url' ) != '' ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'instagram_url' ) ); ?>" target="_BLANK" class="lebanon-instagram">
-                    <span class="fa fa-instagram"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'linkedin_url' ) != '' ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'linkedin_url' ) ); ?>" target="_BLANK" class="lebanon-linkedin">
-                    <span class="fa fa-linkedin"></span>
-                </a>
-                <?php endif; ?>
-                
-                
-                <?php if( get_theme_mod( 'pinterest_url' ) != '' ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'pinterest_url' ) ); ?>" target="_BLANK" class="lebanon-pinterest">
-                    <span class="fa fa-pinterest"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'twitter_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'twitter_url' ) ); ?>" target="_BLANK" class="lebanon-twitter">
-                    <span class="fa fa-twitter"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'vimeo_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'vimeo_url' ) ); ?>" target="_BLANK" class="lebanon-vimeo">
-                    <span class="fa fa-vimeo"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'spotify_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'spotify_url' ) ); ?>" target="_BLANK" class="lebanon-spotify">
-                    <span class="fa fa-spotify"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'apple_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'apple_url' ) ); ?>" target="_BLANK" class="lebanon-apple">
-                    <span class="fa fa-apple"></span>
-                </a>
-                <?php endif; ?>
-                
-                <?php if( get_theme_mod( 'github_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'github_url' ) ); ?>" target="_BLANK" class="lebanon-github">
-                    <span class="fa fa-github"></span>
-                </a>
-                <?php endif; ?>
-                
-                
-                <?php if( get_theme_mod( 'vine_url' ) ) : ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'vine_url' ) ); ?>" target="_BLANK" class="lebanon-vine">
-                    <span class="fa fa-vine"></span>
-                </a>
-                <?php endif; ?>
-                
-            </div>
+        <div class="container">
+            <div class="row">
 
-            <?php $menu = wp_nav_menu( array ( 
-                'theme_location'    => 'footer', 
-                'menu_id'           => 'footer-menu', 
-                'menu_class'        => 'lebanon-footer-nav' ,
+                <div class="lebanon-copyright">
+                    <?php echo ( get_theme_mod( 'copyright_text' ) ); ?>
+                </div>
 
-                ) ); ?>
-            
-            <div class="payment-icons">
+                <?php do_action( 'lebanon_social_icons' ); ?>
 
-                <?php if ( get_theme_mod( 'lebanon_include_cc_visa', true ) ) : ?>
-                    <i class="fa fa-cc-visa"></i>
-                <?php endif; ?>
 
-                <?php if ( get_theme_mod( 'lebanon_include_cc_mastercard', true ) ) : ?>
-                    <i class="fa fa-cc-mastercard"></i>
-                <?php endif; ?>
+                <?php $menu = wp_nav_menu( array ( 
+                    'theme_location'    => 'footer', 
+                    'menu_id'           => 'footer-menu', 
+                    'menu_class'        => 'lebanon-footer-nav' ,
 
-                <?php if ( get_theme_mod( 'lebanon_include_cc_amex', true ) ) : ?>
-                    <i class="fa fa-cc-amex"></i>
-                <?php endif; ?>
+                    ) ); ?>
 
-                <?php if ( get_theme_mod( 'lebanon_include_cc_paypal', true ) ) : ?>
-                    <i class="fa fa-cc-paypal"></i>
-                <?php endif; ?>
+                <?php do_action( 'lebanon_payment_icons' ); ?>
+                <hr>
+                <?php do_action( 'lebanon_designer' ); ?>
 
             </div>
-            
-            <hr>
-
-            <a href="https://smartcatdesign.net" rel="designer" style="display: block !important" class="rel">
-                <?php _e( 'Design by' , 'lebanon' ); echo ' Smart' . 'cat'; ?>
-                <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>"/>
-            </a>
-            
-            
         </div>
         
         <div class="scroll-top alignright">
@@ -829,4 +776,135 @@ function lebanon_hex2rgb( $hex ) {
     $rgb = array ( $r, $g, $b );
     //return implode(",", $rgb); // returns the rgb values separated by commas
     return $rgb; // returns an array with the rgb values
+}
+
+add_action( 'lebanon_payment_icons', 'lebanon_add_payment_icons');
+function lebanon_add_payment_icons() { ?>
+    
+    <div class="payment-icons">
+
+        <?php if ( get_theme_mod( 'lebanon_include_cc_visa', true ) ) : ?>
+            <i class="fa fa-cc-visa"></i>
+        <?php endif; ?>
+
+        <?php if ( get_theme_mod( 'lebanon_include_cc_mastercard', true ) ) : ?>
+            <i class="fa fa-cc-mastercard"></i>
+        <?php endif; ?>
+
+        <?php if ( get_theme_mod( 'lebanon_include_cc_amex', true ) ) : ?>
+            <i class="fa fa-cc-amex"></i>
+        <?php endif; ?>
+
+        <?php if ( get_theme_mod( 'lebanon_include_cc_paypal', true ) ) : ?>
+            <i class="fa fa-cc-paypal"></i>
+        <?php endif; ?>
+
+    </div>
+    
+<?php }
+
+add_action( 'lebanon_social_icons', 'lebanon_add_social_icons');
+function lebanon_add_social_icons() { ?>
+
+    <div id="authica-social">
+
+        <?php if( get_theme_mod( 'facebook_url' ) != '' ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'facebook_url' ) ); ?>" target="_BLANK" class="lebanon-facebook">
+            <span class="fa fa-facebook"></span>
+        </a>
+        <?php endif; ?>
+
+
+        <?php if( get_theme_mod( 'gplus_url' ) != '' ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'gplus_url' ) ); ?>" target="_BLANK" class="lebanon-gplus">
+            <span class="fa fa-google-plus"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'instagram_url' ) != '' ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'instagram_url' ) ); ?>" target="_BLANK" class="lebanon-instagram">
+            <span class="fa fa-instagram"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'linkedin_url' ) != '' ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'linkedin_url' ) ); ?>" target="_BLANK" class="lebanon-linkedin">
+            <span class="fa fa-linkedin"></span>
+        </a>
+        <?php endif; ?>
+
+
+        <?php if( get_theme_mod( 'pinterest_url' ) != '' ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'pinterest_url' ) ); ?>" target="_BLANK" class="lebanon-pinterest">
+            <span class="fa fa-pinterest"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'twitter_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'twitter_url' ) ); ?>" target="_BLANK" class="lebanon-twitter">
+            <span class="fa fa-twitter"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'vimeo_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'vimeo_url' ) ); ?>" target="_BLANK" class="lebanon-vimeo">
+            <span class="fa fa-vimeo"></span>
+        </a>    
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'spotify_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'spotify_url' ) ); ?>" target="_BLANK" class="lebanon-spotify">
+            <span class="fa fa-spotify"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'apple_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'apple_url' ) ); ?>" target="_BLANK" class="lebanon-apple">
+            <span class="fa fa-apple"></span>
+        </a>
+        <?php endif; ?>
+
+        <?php if( get_theme_mod( 'github_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'github_url' ) ); ?>" target="_BLANK" class="lebanon-github">
+            <span class="fa fa-github"></span>
+        </a>
+        <?php endif; ?>
+
+
+        <?php if( get_theme_mod( 'vine_url' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'vine_url' ) ); ?>" target="_BLANK" class="lebanon-vine">
+            <span class="fa fa-vine"></span>
+        </a>
+        <?php endif; ?>
+
+    </div>
+    
+<?php }
+
+
+add_action( 'lebanon_designer', 'lebanon_add_designer', 10 );
+function lebanon_add_designer() { ?>
+    <a href="https://smartcatdesign.net" rel="designer" style="display: block !important" class="rel">
+        <?php _e( 'Design by' , 'lebanon' ); echo ' Smart' . 'cat'; ?>
+        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>"/>
+    </a>
+<?php }
+
+function lebanon_jumbotron_init() {
+    
+    if( get_theme_mod( 'lebanon_the_featured_post_toggle', 'on' ) == 'on' ) :
+        
+        if( get_theme_mod( 'jumbotron_style', 'static' ) == 'static' ) : 
+        
+            lebanon_featured_post();
+            
+        elseif( function_exists( 'lebanon_slider' ) ) :
+            
+            lebanon_slider();
+            
+        endif;
+        
+        do_action( 'lebanon_after_jumbotron' );
+    
+    endif;
 }

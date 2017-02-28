@@ -10,14 +10,14 @@ function lebanon_customize_register( $wp_customize ) {
     class LebanonCustomizerPanel extends WP_Customize_Control {
 
         public function render_content() { ?>
-            <a class="button-primary" href="<?php echo esc_url( 'http://lavishthemes.com/theme/?title=lebanon' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
-            <?php _e( 'View theme demo', 'lebanon' ); ?>
+            <a class="button-primary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
+            <?php _e( 'Upgrade to Lebanon Pro', 'lebanon' ); ?>
             </a>
             <p>
                 <?php _e('Click on the button to view a live demo of the theme, get some inspiration from this demo!','lebanon');?>
             </p>
             <p>
-                <?php _e( 'Lebanon allows you to easily create a frontpage, blog page, e-commerce shop page, and it also includes templates allowing you to customize where the sidebars are located', 'lebanon' ); ?>
+                <?php _e( 'Lebanon allows you to easily create a frontpage, blog page, e-commerce shop page, and it also <b>includes templates</b> allowing you to customize where the sidebars are located', 'lebanon' ); ?>
             </p>
             <p>
                 <?php _e( 'The <b>Frontpage</b> section includes customization options for your Frontpage. You can select a post, page or WooCommerce product to be featured in the main jumbotron. There are 3 sections that allow you to feature your pages, posts or products.', 'lebanon' ); ?>
@@ -42,6 +42,7 @@ function lebanon_customize_register( $wp_customize ) {
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/appearance.php';
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/blog.php';
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/single-post.php';
+    require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/footer.php';
     
     
     // *********************************************
@@ -56,6 +57,7 @@ function lebanon_customize_register( $wp_customize ) {
     
     $wp_customize->get_setting( 'blogname' )->transport             = 'refresh';
     $wp_customize->get_setting( 'blogdescription' )->transport      = 'refresh';
+    $wp_customize->get_setting( 'logo' )->transport      = 'refresh';
 
     
 
@@ -65,21 +67,17 @@ function lebanon_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'lebanon_customize_register' );
 
 
-
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-
 function lebanon_customize_enqueue() {
     
-    wp_enqueue_script( 'lebanon-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+    wp_enqueue_style('lebanon_customizer_css', get_template_directory_uri() . '/inc/css/customizer.css', array(), LEBANON_VERSION);
     
 }
 add_action( 'customize_controls_enqueue_scripts', 'lebanon_customize_enqueue' );
 
 function lebanon_customize_preview_js() {
     wp_enqueue_script( 'lebanon_customizer', get_template_directory_uri() . '/js/customizer.js', array ( 'customize-preview' ), LEBANON_VERSION, true );
+    
+    
 }
 
 add_action( 'customize_preview_init', 'lebanon_customize_preview_js' );

@@ -22,21 +22,25 @@
     <body <?php body_class(); ?>>
         
         <div class="overlay-widget">
-            <div class="row">
-                <?php get_sidebar( 'overlay' ); ?>
+            <div class="container">
+                <div class="row">
+                    <?php get_sidebar( 'overlay' ); ?>
+                </div>
             </div>
         </div>
         
         <div id="lebanon-search" class="noshow">
             
-            <div class="row">
-                
-                <span class="fa fa-search"></span>
-                
-                <?php get_search_form( ); ?>
-                
-                <span class="fa fa-close"></span>
-       
+            <div class="container">
+                <div class="row">
+
+                    <span class="fa fa-search"></span>
+
+                    <?php get_search_form( ); ?>
+
+                    <span class="fa fa-close"></span>
+
+                </div>
             </div>
             
         </div>
@@ -47,47 +51,49 @@
             
             <?php if( get_theme_mod( 'lebanon_preheader', 'off' ) == 'on' ) : ?>
             <div id="pre-header">
-                <div class="row">
-                    <div class="contact-info col-sm-6">
-                        
-                        <?php if( get_theme_mod( 'lebanon_phone_num', '613.698.9864' ) ) : ?>
-                        <i class="fa fa-phone-square"></i> <?php echo get_theme_mod( 'lebanon_phone_num', '613.698.9864' ); ?> |
-                        <?php endif; ?>
-                        
-                        <?php if( get_theme_mod( 'lebanon_email_address', 'support@domain.com' ) ) : ?>
-                        <i class="fa fa-envelope"></i> <?php echo get_theme_mod( 'lebanon_email_address', 'support@domain.com' ); ?>
-                        <?php endif; ?>
-                        
-                    </div>
-                    <div class="links-login col-sm-6 text-right">
-                        
-                        <?php if( get_theme_mod( 'lebanon_link1', __('My account', 'lebanon' ) ) ) : ?>
-                        
-                            <a href="<?php esc_url( get_theme_mod( 'lebanon_link1_url', '#' ) ); ?>">
-                                <?php echo get_theme_mod( 'lebanon_link1', __('My account', 'lebanon' )  ); ?>
-                            </a> |
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-info col-sm-6">
 
-                        <?php endif; ?>
-                        
-                        
-                        <?php if( get_theme_mod( 'lebanon_link2', __('About us', 'lebanon' ) ) ) : ?>
-                        
-                            <a href="<?php esc_url( get_theme_mod( 'lebanon_link2_url', '#' ) ); ?>">
-                                <?php echo get_theme_mod( 'lebanon_link2', __('About us', 'lebanon' ) ); ?>
-                            </a> |
+                            <?php if( get_theme_mod( 'lebanon_phone_num', '613.698.9864' ) ) : ?>
+                            <i class="fa fa-phone-square"></i> <?php echo get_theme_mod( 'lebanon_phone_num', '613.698.9864' ); ?> |
+                            <?php endif; ?>
 
-                        <?php endif; ?>
-                        
-                        <?php if( get_theme_mod( 'lebanon_link3', __('Products', 'lebanon' ) ) ) : ?>
-                        
-                            <a href="<?php esc_url( get_theme_mod( 'lebanon_link3_url', '#' ) ); ?>">
-                                <?php echo get_theme_mod( 'lebanon_link3', __('Products', 'lebanon' ) ); ?>
-                            </a>
+                            <?php if( get_theme_mod( 'lebanon_email_address', 'support@domain.com' ) ) : ?>
+                            <i class="fa fa-envelope"></i> <?php echo get_theme_mod( 'lebanon_email_address', 'support@domain.com' ); ?>
+                            <?php endif; ?>
 
-                        <?php endif; ?>
-                        
-                        
-                        
+                        </div>
+                        <div class="links-login col-sm-6 text-right">
+
+                            <?php if( get_theme_mod( 'lebanon_link1', __('My account', 'lebanon' ) ) ) : ?>
+
+                                <a href="<?php esc_url( get_theme_mod( 'lebanon_link1_url', '#' ) ); ?>">
+                                    <?php echo get_theme_mod( 'lebanon_link1', __('My account', 'lebanon' )  ); ?>
+                                </a> |
+
+                            <?php endif; ?>
+
+
+                            <?php if( get_theme_mod( 'lebanon_link2', __('About us', 'lebanon' ) ) ) : ?>
+
+                                <a href="<?php esc_url( get_theme_mod( 'lebanon_link2_url', '#' ) ); ?>">
+                                    <?php echo get_theme_mod( 'lebanon_link2', __('About us', 'lebanon' ) ); ?>
+                                </a> |
+
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod( 'lebanon_link3', __('Products', 'lebanon' ) ) ) : ?>
+
+                                <a href="<?php esc_url( get_theme_mod( 'lebanon_link3_url', '#' ) ); ?>">
+                                    <?php echo get_theme_mod( 'lebanon_link3', __('Products', 'lebanon' ) ); ?>
+                                </a>
+
+                            <?php endif; ?>
+
+
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,72 +104,74 @@
                 <div id="lebanon-header" class="<?php echo is_front_page() ? 'frontpage' : ''; ?>">
 
                     <div class="header-inner">
+                        
+                        <div class="container">
+                            <div class="row">
 
-                        <div class="row">
+                                <div class="lebanon-branding">
 
-                            <div class="lebanon-branding">
+                                    <div class="site-branding">
 
-                                <div class="site-branding">
-                                    
-                                    <div id="lebanon-logo" class="<?php echo has_custom_logo() ? 'show' : 'hidden'; ?>">
+                                        <div id="lebanon-logo" class="<?php echo has_custom_logo() ? 'show' : 'hidden'; ?>">
 
-                                        <?php the_custom_logo(); ?>
+                                            <?php the_custom_logo(); ?>
 
-                                    </div>
-                                        <h1 class="site-title <?php echo ! has_custom_logo() ? 'show' : 'hidden'; ?>">
-                                            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-                                        </h1>
+                                        </div>
+                                            <h1 class="site-title <?php echo ! has_custom_logo() ? 'show' : 'hidden'; ?>">
+                                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                                            </h1>
 
-                                        <p class="site-description <?php echo ! has_custom_logo() ? 'show' : 'hidden'; ?>">
-                                            <?php bloginfo('description'); ?>
-                                        </p>
-                                        
-                                    <?php //endif; ?>
-                                    
-                                </div><!-- .site-branding -->
+                                            <p class="site-description <?php echo ! has_custom_logo() ? 'show' : 'hidden'; ?>">
+                                                <?php bloginfo('description'); ?>
+                                            </p>
 
-                            </div>
+                                        <?php //endif; ?>
 
-                            <div class="lebanon-header-menu">
+                                    </div><!-- .site-branding -->
 
-                                <?php if( class_exists( 'WooCommerce' ) ) : ?>
-                                
-                                    <div class="lebanon-mobile-cart">
+                                </div>
 
-                                        <a class="lebanon-cart" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
+                                <div class="lebanon-header-menu">
 
-                                    </div>
-                                
-                                <?php endif; ?>
-                                
-                                
-                                <nav id="site-navigation" class="main-navigation" role="navigation">
-                                    
-                                    <?php
-                                    
-                                    if( has_nav_menu( 'primary' ) ) :
-                                        
-                                        $menu = wp_nav_menu(array(
-                                            'theme_location' => 'primary',
-                                            'menu_id' => 'primary-menu',
-                                            'menu_class' => 'lebanon-nav',
-                                        ));
-                                    else :
-                                        
-                                        if( current_user_can( 'edit_theme_options' ) ) :
-                                            echo '<div id="lebanon-add-menu"><a class="lebanon-cart" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . __( 'Add a Primary Menu', 'lebanon' ) . '</a></div>';
+                                    <?php if( class_exists( 'WooCommerce' ) ) : ?>
+
+                                        <div class="lebanon-mobile-cart">
+
+                                            <a class="lebanon-cart" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
+
+                                        </div>
+
+                                    <?php endif; ?>
+
+
+                                    <nav id="site-navigation" class="main-navigation" role="navigation">
+
+                                        <?php
+
+                                        if( has_nav_menu( 'primary' ) ) :
+
+                                            $menu = wp_nav_menu(array(
+                                                'theme_location' => 'primary',
+                                                'menu_id' => 'primary-menu',
+                                                'menu_class' => 'lebanon-nav',
+                                            ));
+                                        else :
+
+                                            if( current_user_can( 'edit_theme_options' ) ) :
+                                                echo '<div id="lebanon-add-menu"><a class="lebanon-cart" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . __( 'Add a Primary Menu', 'lebanon' ) . '</a></div>';
+                                            endif;
                                         endif;
-                                    endif;
-                                    
-
-                                    ?>
 
 
-                                </nav><!-- #site-navigation -->
+                                        ?>
 
-                                
+
+                                    </nav><!-- #site-navigation -->
+
+
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>

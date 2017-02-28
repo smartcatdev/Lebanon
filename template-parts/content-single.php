@@ -13,16 +13,18 @@
         <div class="overlay"></div>
         
         <div class="cell-display">
-            <div class="row">
-                <div class="col-sm-12">
-                    <header class="entry-header">
-                        <?php 
-                        if( get_theme_mod( 'lebanon_post_category', 'on' ) == 'on' ) :
-                            lebanon_entry_footer(); 
-                        endif;
-                        ?>
-                        <?php the_title('<h1 class="text-left entry-title">', '</h1>'); ?>
-                    </header><!-- .entry-header -->                
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <header class="entry-header">
+                            <?php 
+                            if( get_theme_mod( 'lebanon_post_category', 'on' ) == 'on' ) :
+                                lebanon_entry_footer(); 
+                            endif;
+                            ?>
+                            <?php the_title('<h1 class="text-left entry-title">', '</h1>'); ?>
+                        </header><!-- .entry-header -->                
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,65 +33,78 @@
     </div>
 <?php endif; ?>
 
-<div class="row">
-    
-    <?php get_sidebar('left'); ?>
-    
-    <div class="col-sm-<?php echo esc_attr( lebanon_main_width() ); ?>">
+<div class="container">
+    <div class="row">
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <header class="entry-header">
-                <div class="entry-meta">
-                    <div class="meta-detail">
-                        
-                        <?php if( get_theme_mod( 'lebanon_post_date', 'on' ) == 'on' ) : ?>
-                        <div><span class="fa fa-calendar"></span> <?php echo lebanon_posted_on(); ?></div>
-                        <?php endif; ?>
-                        
-                        <?php if( get_theme_mod( 'lebanon_post_author', 'on' ) == 'on' ) : ?>
-                        <div class="author">
-                            <span class="fa fa-user"></span>
-                            <?php the_author_posts_link(); ?>
+        <?php get_sidebar('left'); ?>
+
+        <div class="col-sm-<?php echo esc_attr( lebanon_main_width() ); ?>">
+
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <header class="entry-header">
+                    <div class="entry-meta">
+                        <div class="meta-detail">
+
+                            <?php if( get_theme_mod( 'lebanon_post_date', 'on' ) == 'on' ) : ?>
+                            <div><span class="fa fa-calendar"></span> <?php echo lebanon_posted_on(); ?></div>
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod( 'lebanon_post_author', 'on' ) == 'on' ) : ?>
+                            <div class="author">
+                                <span class="fa fa-user"></span>
+                                <?php the_author_posts_link(); ?>
+                            </div>
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod( 'lebanon_post_comments', 'on' ) == 'on' ) : ?>
+                            <div><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'lebanon') : '<span class="fa fa-comment"></span> ' . esc_attr( get_comments_number() ) . ' Comments'; ?></div>
+                            <?php endif; ?>
+
                         </div>
-                        <?php endif; ?>
-                        
-                        <?php if( get_theme_mod( 'lebanon_post_comments', 'on' ) == 'on' ) : ?>
-                        <div><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'lebanon') : '<span class="fa fa-comment"></span> ' . esc_attr( get_comments_number() ) . ' Comments'; ?></div>
-                        <?php endif; ?>
 
+                    </div><!-- .entry-meta -->
+
+                </header><!-- .entry-header -->
+
+                <div class="entry-content">
+                    <?php the_content(); ?>
+
+                    <div id="author-bio">
+                        <div class="">
+                            <div class="">
+                                <div class="col-sm-2 author-image">
+                                    <?php echo get_avatar( get_the_author_meta( 'login' ), 150 ); ?>
+                                </div>
+                                <div class="col-sm-10 author-bio">
+                                    <div><?php the_author_posts_link(); ?></div>
+                                    <?php echo get_the_author_meta( 'description' ); ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                </div><!-- .entry-meta -->
+                    <?php
+                    wp_link_pages(array(
+                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'lebanon'),
+                        'after' => '</div>',
+                    ));
+                    ?>
+                </div><!-- .entry-content -->
 
-            </header><!-- .entry-header -->
+                <?php the_post_navigation(); ?>
 
-            <div class="entry-content">
-                <?php the_content(); ?>
-                
-                <?php echo get_the_author_meta( 'description' ); ?>
-                <?php echo get_avatar( get_the_author_meta( 'login' ) ); ?>
-                
                 <?php
-                wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'lebanon'),
-                    'after' => '</div>',
-                ));
+                // If comments are open or we have at least one comment, load up the comment template.
+                if (comments_open() || get_comments_number()) :
+                    comments_template();
+                endif;
                 ?>
-            </div><!-- .entry-content -->
 
-            <?php the_post_navigation(); ?>
+            </article><!-- #post-## -->
 
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number()) :
-                comments_template();
-            endif;
-            ?>
+        </div>
 
-        </article><!-- #post-## -->
+        <?php get_sidebar(); ?>
 
     </div>
-    
-    <?php get_sidebar(); ?>
-
 </div>

@@ -10,6 +10,7 @@ $wp_customize->add_panel( 'homepage', array (
     $wp_customize->add_section( 'homepage_topa', array (
         'title'                 => __( 'Top A - Featured Page/Post/Product', 'lebanon' ),
         'panel'                 => 'homepage',
+        'priority'              => 1
     ) );
 
         $wp_customize->add_setting( 'lebanon_the_featured_post2_toggle', array (
@@ -43,6 +44,7 @@ $wp_customize->add_panel( 'homepage', array (
     $wp_customize->add_section( 'homepage_widget', array (
         'title'                 => __( 'Top B - Homepage Widget', 'lebanon' ),
         'panel'                 => 'homepage',
+        'priority'              => 2
     ) );
     
 
@@ -81,6 +83,7 @@ $wp_customize->add_panel( 'homepage', array (
     $wp_customize->add_section( 'homepage_topc', array (
         'title'                 => __( 'Top C - 3-column Page/Post/Product', 'lebanon' ),
         'panel'                 => 'homepage',
+        'priority'              => 3
     ) );
     
     
@@ -101,6 +104,22 @@ $wp_customize->add_panel( 'homepage', array (
             )
         ));
     
+        $wp_customize->add_setting( 'homepage_topc_icon_toggle', array (
+            'default'               => 'off',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'lebanon_radio_sanitize_onoff'
+        ) );
+
+       $wp_customize->add_control( 'homepage_topc_icon_toggle', array(
+            'label'         => __( 'Use post Featured Image or Icons ?', 'lebanon' ),
+            'section' => 'homepage_topc',
+            'type'    => 'radio',
+            'choices'    => array(
+                'on'    => __( 'Icons', 'lebanon' ),
+                'off'    => __( 'Featured Images', 'lebanon' )
+            )
+        ));
+    
         $wp_customize->add_setting( 'lebanon_the_featured_post3', array (
             'default'               => 1,
             'transport'             => 'refresh',
@@ -111,6 +130,18 @@ $wp_customize->add_panel( 'homepage', array (
             'section'               => 'homepage_topc',
             'label'                 => __( 'Select the Featured Post', 'lebanon' ),
             'choices'               => lebanon_all_posts_array(),
+        ) );
+    
+        $wp_customize->add_setting( 'lebanon_the_featured_post3_icon', array (
+            'default'               => 'fa fa-paint-brush',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'lebanon_sanitize_icon',
+        ) );
+        $wp_customize->add_control( 'lebanon_the_featured_post3_icon', array(
+            'type'                  => 'select',
+            'section'               => 'homepage_topc',
+            'label'                 => __( 'Select the icon', 'lebanon' ),
+            'choices'               => lebanon_icons(),
         ) );
 
         $wp_customize->add_setting( 'lebanon_the_featured_post4', array (
@@ -124,6 +155,18 @@ $wp_customize->add_panel( 'homepage', array (
             'label'                 => __( 'Select the Featured Post', 'lebanon' ),
             'choices'               => lebanon_all_posts_array(),
         ) );
+        
+        $wp_customize->add_setting( 'lebanon_the_featured_post4_icon', array (
+            'default'               => 'fa fa-desktop',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'lebanon_sanitize_icon',
+        ) );
+        $wp_customize->add_control( 'lebanon_the_featured_post4_icon', array(
+            'type'                  => 'select',
+            'section'               => 'homepage_topc',
+            'label'                 => __( 'Select the icon', 'lebanon' ),
+            'choices'               => lebanon_icons(),
+        ) );
 
         $wp_customize->add_setting( 'lebanon_the_featured_post5', array (
             'default'               => 1,
@@ -136,6 +179,18 @@ $wp_customize->add_panel( 'homepage', array (
             'label'                 => __( 'Select the Featured Post', 'lebanon' ),
             'choices'               => lebanon_all_posts_array(),
         ) );
+        
+        $wp_customize->add_setting( 'lebanon_the_featured_post5_icon', array (
+            'default'               => 'fa fa-bar-chart',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'lebanon_sanitize_icon',
+        ) );
+        $wp_customize->add_control( 'lebanon_the_featured_post5_icon', array(
+            'type'                  => 'select',
+            'section'               => 'homepage_topc',
+            'label'                 => __( 'Select the icon', 'lebanon' ),
+            'choices'               => lebanon_icons(),
+        ) );
 
         $wp_customize->add_setting( 'homepage_topc_button', array (
             'default'               => __( 'Learn more', 'lebanon' ),
@@ -145,23 +200,26 @@ $wp_customize->add_panel( 'homepage', array (
         $wp_customize->add_control( 'homepage_topc_button', array(
             'type'                  => 'text',
             'section'               => 'homepage_topc',
-            'label'                 => __( 'Link #1 text', 'lebanon' ),
+            'label'                 => __( 'Button text', 'lebanon' ),
         ) );
 
 
     $wp_customize->add_section( 'homepage_overlay', array (
         'title'                 => __( 'Frontpage Overlay', 'lebanon' ),
         'panel'                 => 'homepage',
+        'priority'              => 10
     ) );
 
     $wp_customize->add_section( 'static_front_page', array (
         'title' => __( 'Static Front Page', 'lebanon' ),
         'panel' => 'homepage',
+        'priority'              => 10
     ) );
     
     $wp_customize->add_section( 'title_tagline', array (
         'title' => __( 'Logo, Title, Tagline & Favicon', 'lebanon' ),
         'panel' => 'logo',
+        'priority'              => 10
     ) );
     
         $wp_customize->add_setting( 'overlay_bool', array (

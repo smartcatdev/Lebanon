@@ -111,7 +111,6 @@ $wp_customize->add_panel( 'footer', array (
             'type'                  => 'text',
             'section'               => 'footer_text',
             'label'                 => __( 'Copyright Text', 'lebanon' )
-
         ) );
     
     $wp_customize->add_section( 'social_links', array (

@@ -36,7 +36,7 @@ $wp_customize->add_section( 'homepage_jumbotron', array (
     ) );
 
     $wp_customize->add_setting( 'lebanon_jumbotron_height', array (
-        'default'               => 650,
+        'default'               => 450,
         'transport'             => 'refresh',
         'sanitize_callback'     => 'lebanon_sanitize_integer',
     ) );

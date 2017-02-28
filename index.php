@@ -14,33 +14,35 @@ die('this is index.php');
     <main id="main" class="site-main lebanon-blog-page" role="main">
 
 
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-            <?php get_sidebar('left'); ?>
+                <?php get_sidebar('left'); ?>
 
-            <div class="lebanon-blog-content col-sm-<?php echo esc_attr( lebanon_main_width() ); ?>">
-                <?php if (have_posts()) : ?>
-
-
-
-                    <?php /* Start the Loop */ ?>
-                    <?php while (have_posts()) : the_post(); ?>
-
-                        <?php get_template_part('template-parts/content-blog', get_post_format()); ?>
-
-                    <?php endwhile; ?>
+                <div class="lebanon-blog-content col-sm-<?php echo esc_attr( lebanon_main_width() ); ?>">
+                    <?php if (have_posts()) : ?>
 
 
 
-                <?php else : ?>
+                        <?php /* Start the Loop */ ?>
+                        <?php while (have_posts()) : the_post(); ?>
 
-                    <?php get_template_part('template-parts/content', 'none'); ?>
+                            <?php get_template_part('template-parts/content-blog', get_post_format()); ?>
 
-                <?php endif; ?>
+                        <?php endwhile; ?>
+
+
+
+                    <?php else : ?>
+
+                        <?php get_template_part('template-parts/content', 'none'); ?>
+
+                    <?php endif; ?>
+                </div>
+
+                <?php get_sidebar(); ?>
+
             </div>
-
-            <?php get_sidebar(); ?>
-
         </div>
         <div class="clear"></div>
         <div class="lebanon-pagination">

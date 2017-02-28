@@ -58,8 +58,7 @@ body{
 }
 
 .row{
-    max-width: 1200px;
-    margin: 0 auto;
+    
 }
 
 .hidden{
@@ -98,7 +97,7 @@ body{
 
 ul{
     margin: 0;
-    /*padding-left: 0;*/
+    padding-left: 15px;
 }
 
 ul li{
@@ -503,7 +502,9 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
     
 } 
 
-#lebanon-featured-post #slide1 span.header-inner{
+#lebanon-featured-post #slide1 span.header-inner,
+.lebanon-blog-post .post-panel-content a,
+#lebanon-page-jumbotron .entry-title{
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
@@ -671,6 +672,13 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
     margin: 30px 0;
 }
 
+#author-bio {
+    border: 1px solid #d1d1d1;
+    overflow: hidden;
+    padding: 15px 0;
+    background: #fff;
+}
+
 
 .overlay-widget{
     color: #414141;
@@ -720,8 +728,9 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
 
 /*-- ## Top A --*/
 #lebanon-topa{
-    padding: 50px 0;
+    padding: 35px 0;
     overflow: hidden;
+    background: #fff;
 }
 
 #lebanon-topa .heading{
@@ -758,13 +767,18 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
 }
 
 #lebanon-topa .wp-post-image{
-    width: 50%;
+    /*width: 50%;*/
+    border: 1px solid #e1e1e1;
+    padding: 3px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba( 0,0,0,0.4);
     
 }
 
 /*-- ## Buttons --*/
 .lebanon-button,
 a.lebanon-button,
+.accent-button,
 button, 
 input[type="button"], 
 input[type="reset"], 
@@ -898,6 +912,10 @@ input[type="submit"],
 
 #footer-menu li ul{
     display: none;
+}
+
+#footer-menu ul{
+    padding-left: 0;
 }
 
 .site-info a.rel{
@@ -1233,7 +1251,7 @@ input[type="submit"],
 #lebanon-homepage-widget > div{
     overflow: hidden;
     background: rgba(10,10,10, 0.6);
-    padding: 55px 0 40px 0px;
+    padding: 30px 0;
     color: #fff;
     color: rgba(255,255,255,0.9);
     min-height: 300px;
@@ -1242,6 +1260,19 @@ input[type="submit"],
 #lebanon-topb .widget ul{
     padding-left: 0;
     list-style: none;
+}
+
+#lebanon-topc {
+    padding: 30px 0;
+}
+
+#lebanon-topc span.fa{
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba( 0,0,0,0.4 );
 }
 
 #lebanon-topc h3.heading{
@@ -1294,6 +1325,16 @@ li.product a.ajax_add_to_cart{
 
 #title_bread_wrap{
     margin-top: 15px;
+}
+
+#comments {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #d1d1d1;
+}
+
+#comments li {
+    list-style: none;
 }
 
 #comments .comment-list {

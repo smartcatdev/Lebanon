@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
         }).masonry('reloadItems');
     });
 
-        $('#primary-menu').slicknav({
+    $('#primary-menu').slicknav({
         prependTo: $('.lebanon-header-menu'),
         label: ''
     });
@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
     var lebanonWow = new WOW({
         boxClass: 'reveal',
         animateClass: 'animated',
-        offset: 100
+        offset: 200
 
     });
 

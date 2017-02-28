@@ -1,7 +1,9 @@
 <?php
 
+if( ! defined( 'LEBANON_PRO_PATH' ) ) :
+
 $wp_customize->add_section('lebanon_demo', array(
-    'title'     => __( 'Theme Demo & Instructions', 'lebanon'),
+    'title'     => __( 'Upgrade to Lebanon Pro', 'lebanon'),
     'priority'  => 0.5,
 ));
 
@@ -21,3 +23,4 @@ $wp_customize->add_section('lebanon_demo', array(
             )
         )
     );
+endif;
