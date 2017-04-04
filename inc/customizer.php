@@ -10,9 +10,32 @@ function lebanon_customize_register( $wp_customize ) {
     class LebanonCustomizerPanel extends WP_Customize_Control {
 
         public function render_content() { ?>
-            <a class="button-primary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
-            <?php _e( 'Upgrade to Lebanon Pro', 'lebanon' ); ?>
-            </a>
+            
+            <div>
+                <a class="button-primary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
+                <?php _e( 'Upgrade to Lebanon Pro', 'lebanon' ); ?>
+                </a>
+
+                <a class="button-secondary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
+                <?php _e( 'Live Demo', 'lebanon' ); ?>
+                </a>
+            </div>       
+            <br>
+
+            <h3><?php _e( 'Pro Version Features', 'lebanon' ); ?></h3>
+            <ol>
+                <li><?php _e( 'Jumbotron Slider - Up to 6 slides', 'lebanon' ); ?></li>
+                <li><?php _e( 'Interactive Map section', 'lebanon' ); ?></li>
+                <li><?php _e( 'Additional Call To Action widget areas on the Frontpage', 'lebanon' ); ?></li>
+                <li><?php _e( 'Clients list, Testimonials carousel widgets', 'lebanon' ); ?></li>
+                <li><?php _e( 'Contact Form & Contact Info widgets', 'lebanon' ); ?></li>
+                <li><?php _e( 'Call-to-action and Pricing Table widgets', 'lebanon' ); ?></li>
+                <li><?php _e( 'Recent Articles & WooCommerce Products widgets', 'lebanon' ); ?></li>
+                <li><?php _e( '2 Additional Blog Styles', 'lebanon' ); ?></li>
+                <li><?php _e( 'Author Bio widget', 'lebanon' ); ?></li>
+                <li><?php _e( 'Remove "Designed by Smartcat"', 'lebanon' ); ?></li>
+            </ol>
+
             <p>
                 <?php _e('Click on the button to view a live demo of the theme, get some inspiration from this demo!','lebanon');?>
             </p>
@@ -185,42 +208,50 @@ function lebanon_integer_sanitize($input){
      return intval( $input );
 }
    
-function lebanon_fonts() {
+if( !function_exists( 'lebanon_fonts' ) ) :
+    function lebanon_fonts() {
 
-    $font_family_array = array(
-        'Bad Script, cursive' => 'Bad+Script',
-        'Lobster Two, cursive' => 'Lobster+Two',
-        'Josefin Sans, sans-serif' => 'Josefin',
-        'Open Sans, sans-serif' => 'Open Sans',
-        'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
-        'Source Sans Pro, sans-serif' => 'Source Sans Pro',
-        'Abel, sans-serif' => 'Abel',
-        'Bangers, cursive' => 'Bangers',
-        'Lobster Two, cursive' => 'Lobster+Two',
-        'Josefin Sans, sans-serif' => 'Josefin+Sans:300,400,600,700',
-        'Montserrat, sans-serif' => 'Montserrat:400,700',
-        'Poiret One, cursive' => 'Poiret+One',
-        'Source Sans Pro, sans-serif' => 'Source+Sans+Pro:200,400,600',
-        'Lato, sans-serif' => 'Lato:100,300,400,700,900,300italic,400italic',
-        'Raleway, sans-serif' => 'Raleway:400,300,500,700',
-        'Shadows Into Light, cursive' => 'Shadows+Into+Light',
-        'Orbitron, sans-serif' => 'Orbitron',
-        'PT Sans Narrow, sans-serif' => 'PT+Sans+Narrow',
-        'Lora, serif' => 'Lora',
-        'Abel, sans-serif' => 'Abel',
-        'Yellowtail, cursive' => 'Yellowtail',
-        'Days One, sans-serif' => 'Days+One',
-        'Changa One, cursive' => 'Changa+One',
-        'Gentium Book Basic, serif' => 'Gentium+Book+Basic',
-        'Martel, serif' => 'Martel:300,400,700',
-        'Basic, sans-serif' => 'Basic',
-        'Corben, cursive' => 'Corben'
-    );
+        $font_family_array = array(
+            'Bad Script, cursive' => 'Bad+Script',
+            'Lobster Two, cursive' => 'Lobster+Two',
+            'Josefin Sans, sans-serif' => 'Josefin',
+            'Open Sans, sans-serif' => 'Open Sans',
+            'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
+            'Source Sans Pro, sans-serif' => 'Source Sans Pro',
+            'Abel, sans-serif' => 'Abel',
+            'Bangers, cursive' => 'Bangers',
+            'Lobster Two, cursive' => 'Lobster+Two',
+            'Josefin Sans, sans-serif' => 'Josefin+Sans:300,400,600,700',
+            'Montserrat, sans-serif' => 'Montserrat:400,700',
+            'Poiret One, cursive' => 'Poiret+One',
+            'Source Sans Pro, sans-serif' => 'Source+Sans+Pro:200,400,600',
+            'Lato, sans-serif' => 'Lato:100,300,400,700,900,300italic,400italic',
+            'Raleway, sans-serif' => 'Raleway:400,300,500,700',
+            'Shadows Into Light, cursive' => 'Shadows+Into+Light',
+            'Orbitron, sans-serif' => 'Orbitron',
+            'PT Sans Narrow, sans-serif' => 'PT+Sans+Narrow',
+            'Lora, serif' => 'Lora',
+            'Abel, sans-serif' => 'Abel',
+            'Yellowtail, cursive' => 'Yellowtail',
+            'Days One, sans-serif' => 'Days+One',
+            'Changa One, cursive' => 'Changa+One',
+            'Gentium Book Basic, serif' => 'Gentium+Book+Basic',
+            'Martel, serif' => 'Martel:300,400,700',
+            'Basic, sans-serif' => 'Basic',
+            'Corben, cursive' => 'Corben'
+        );
 
-    return $font_family_array;
-    
+        if( function_exists( 'lebanon_extra_fonts' ) ) :
+            $extra_fonts = lebanon_extra_fonts();
+            return array_merge( $extra_fonts, $font_family_array );
+        endif;
+        
+        return ( $font_family_array );
+    }    
+endif;
 
-}
+
+
 function lebanon_all_posts_array() {
 
     $posts = get_posts( array(

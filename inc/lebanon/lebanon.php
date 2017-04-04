@@ -904,7 +904,11 @@ function lebanon_jumbotron_init() {
             
         endif;
         
-        do_action( 'lebanon_after_jumbotron' );
+        if( ! is_home() ) :
+            do_action( 'lebanon_after_jumbotron' );
+        endif;
+        
+        
     
     endif;
 }

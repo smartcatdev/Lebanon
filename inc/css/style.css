@@ -1062,29 +1062,30 @@ input[type="submit"],
 }
 
 @media( min-width: 769px ) {
-    .lebanon-blog-post:nth-of-type(7n+1) {
+    
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+1) {
         width: 24%;
         height: 250px;
     }
 
-    .lebanon-blog-post:nth-of-type(7n+2) {
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+2) {
         width: 48%;
         height: 250px;
     }
 
-    .lebanon-blog-post:nth-of-type(7n+3) {
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+3) {
         width: 24%;
         height: 500px;
     }
 
-    .lebanon-blog-post:nth-of-type(7n+4) {
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+4) {
         width: 48%;
         height: 500px;
     }
 
-    .lebanon-blog-post:nth-of-type(7n+5),
-    .lebanon-blog-post:nth-of-type(7n+6),
-    .lebanon-blog-post:nth-of-type(7n+7){
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+5),
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+6),
+    .lebanon-blog-content .lebanon-blog-post:nth-of-type(7n+7){
         width: 24%;
         height: 250px;
     }

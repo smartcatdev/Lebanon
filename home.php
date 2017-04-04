@@ -11,7 +11,11 @@
  */
 get_header();
 
-lebanon_jumbotron_init();
+if( get_theme_mod( 'blog_jumbotron', 'on' ) == 'on') :
+    lebanon_jumbotron_init();
+endif;
+
+
 
 ?>
 
@@ -39,15 +43,18 @@ lebanon_jumbotron_init();
                             </header>
                         <?php endif; ?>
 
+                        <?php $blog_style = get_theme_mod( 'blog_style', 'grid' ); ?>
+                        
 
-                        <div class="lebanon-blog-content">
+                        <div class="<?php echo $blog_style == 'grid' ? 'lebanon-blog-content' : ''; ?>">
+                            <div class="blog-style-<?php echo $blog_style; ?>">
+                            <?php while (have_posts()) : the_post(); ?>
 
-                        <?php while (have_posts()) : the_post(); ?>
+                                <?php get_template_part('template-parts/content-blog', get_post_format()); ?>
 
-                            <?php get_template_part('template-parts/content-blog', get_post_format()); ?>
+                            <?php endwhile; ?>
 
-                        <?php endwhile; ?>
-
+                            </div>
                         </div>
 
                         <div class="lebanon-pagination">

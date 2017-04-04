@@ -68,20 +68,8 @@
 
                 <div class="entry-content">
                     <?php the_content(); ?>
-
-                    <div id="author-bio">
-                        <div class="">
-                            <div class="">
-                                <div class="col-sm-2 author-image">
-                                    <?php echo get_avatar( get_the_author_meta( 'login' ), 150 ); ?>
-                                </div>
-                                <div class="col-sm-10 author-bio">
-                                    <div><?php the_author_posts_link(); ?></div>
-                                    <?php echo get_the_author_meta( 'description' ); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <?php do_action( 'lebanon_after_post_content' ); ?>
 
                     <?php
                     wp_link_pages(array(

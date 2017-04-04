@@ -34,11 +34,13 @@ $front = get_option('show_on_front');
                                 <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
                             </header>
                         <?php endif; ?>
-
-
-
-                        <?php echo $front == 'posts' ? '<div class="lebanon-blog-content">' : ''; ?>
-
+                        
+                    
+                        <?php $blog_style = get_theme_mod( 'blog_style', 'grid' ); ?>
+                    
+                        <?php echo $front == 'posts' && $blog_style == 'grid' ? '<div class="lebanon-blog-content">' : ''; ?>
+                        
+                        <div class="blog-style-<?php echo $blog_style; ?>">
                         <?php while (have_posts()) : the_post(); ?>
 
                             <?php
@@ -50,7 +52,10 @@ $front = get_option('show_on_front');
                             ?>
 
                         <?php endwhile; ?>
+                    
                         <?php echo $front == 'posts' ? '</div>' : ''; ?>
+                        </div>
+                    
                         <div class="lebanon-pagination">
                             <?php echo paginate_links(); ?>
                         </div>

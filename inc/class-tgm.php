@@ -333,8 +333,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'oops'                            => __( 'Something went wrong with the plugin API.', 'lebanon' ),
 				'notice_can_install_required'     => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'This theme requires the following plugin: %1$s.',
-					'This theme requires the following plugins: %1$s.',
+					'Lebanon requires these plugins to be installed: %1$s.',
+					'Lebanon requires the following plugins: %1$s.',
 					'lebanon'
 				),
 				'notice_can_install_recommended'  => _n_noop(
