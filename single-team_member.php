@@ -1,8 +1,7 @@
 <?php
 /**
  * 
- * Athena - Team Member Single Template
- * Last Updated: Feb 23rd, 2016
+ * Lebanon - Team Member Single Template
  * Current version of the plugin : 3.0.0
  * @author Bilal Hassan <bilal@smartcat.ca>
  * 

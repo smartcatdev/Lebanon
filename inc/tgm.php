@@ -58,12 +58,12 @@ function lebanon_register_required_plugins() {
         $plugins = array (
             // This is an example of how to include a plugin from the WordPress Plugin Repository.
             array (
-                'name' => __( 'Our Team Showcase', 'layla' ),
+                'name' => __( 'Our Team Showcase', 'lebanon' ),
                 'slug' => 'our-team-enhanced',
                 'required' => false,
             ),
             array (
-                'name' => __( 'uCare - Support Ticket System', 'layla' ),
+                'name' => __( 'uCare - Support Ticket System', 'lebanon' ),
                 'slug' => 'ucare-support-system',
                 'required' => false,
             ),

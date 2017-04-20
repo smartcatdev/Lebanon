@@ -259,7 +259,7 @@ function lebanon_custom_css() {
         }
         
         #lebanon-featured-post #slide1{
-            height: <?php echo esc_attr( get_theme_mod('lebanon_jumbotron_height', 450 ) ); ?>px;
+            height: <?php echo esc_attr( get_theme_mod('lebanon_jumbotron_height', 650 ) ); ?>px;
         }
         
         #masthead.site-header,

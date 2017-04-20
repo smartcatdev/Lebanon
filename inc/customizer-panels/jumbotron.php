@@ -36,7 +36,7 @@ $wp_customize->add_section( 'homepage_jumbotron', array (
     ) );
 
     $wp_customize->add_setting( 'lebanon_jumbotron_height', array (
-        'default'               => 450,
+        'default'               => 550,
         'transport'             => 'refresh',
         'sanitize_callback'     => 'lebanon_sanitize_integer',
     ) );
@@ -107,9 +107,9 @@ $wp_customize->add_section( 'homepage_jumbotron', array (
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'lebanon_the_featured_post_image', array (
-        'label' =>              __( 'Custom Background Image', 'athena' ),
+        'label' =>              __( 'Custom Background Image', 'lebanon' ),
         'section'               => 'homepage_jumbotron',
         'mime_type'             => 'image',
         'settings'              => 'lebanon_the_featured_post_image',
-        'description'           => __( 'If you want to use a custom image, upload an image here. Make sure that the Use Custom Image toggle is set to YES', 'athena' ),        
+        'description'           => __( 'If you want to use a custom image, upload an image here. Make sure that the Use Custom Image toggle is set to YES', 'lebanon' ),        
     ) ) );

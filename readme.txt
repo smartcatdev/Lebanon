@@ -177,6 +177,7 @@ Pro version options
                             https://pixabay.com/en/antique-beverage-breakfast-caffeine-1869598/
                             https://pixabay.com/en/breakfast-healthy-colorful-hummus-1804457/
                             https://pixabay.com/en/girl-looking-away-1995624/
+                            https://pixabay.com/en/woman-girl-female-pearl-necklace-918787/
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en    
 

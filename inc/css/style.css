@@ -1316,6 +1316,10 @@ input[type="submit"],
     padding: 0 15px;
 }
 
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    padding: 0 15px;
+}
+
 a.button.add_to_cart_button,
 li.product a.added_to_cart,
 li.product a.ajax_add_to_cart{

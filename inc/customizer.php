@@ -12,8 +12,8 @@ function lebanon_customize_register( $wp_customize ) {
         public function render_content() { ?>
             
             <div>
-                <a class="button-primary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
-                <?php _e( 'Upgrade to Lebanon Pro', 'lebanon' ); ?>
+                <a class="button-primary" href="<?php echo esc_url( 'https://smartcatdesign.net/downloads/lebanon-pro/' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
+                <?php _e( 'Go Pro', 'lebanon' ); ?>
                 </a>
 
                 <a class="button-secondary" href="<?php echo esc_url( 'http://lebanon.smartcatdev.wpengine.com' ); ?>" title="<?php esc_attr_e( 'View theme demo', 'lebanon' ); ?>" target="_blank">
