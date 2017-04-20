@@ -5,7 +5,7 @@ Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layou
 
 Requires at least: 4.4
 Tested up to: 4.7.1
-Stable tag: 1.3.1
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Copyright 2017 Smartcat
 
 == Description ==
 
-Lebanon is a clean & responsive multi-purpose theme with tons of customizable features. It is well suited for food or lifestyle bloggers, teams, travel blog, photographers e-commerce stores and creative individuals. You can customize all the colors, fonts, and appearance and preview your changes live. A theme that makes it easy for you to create a beautiful and professional looking site quickly and easily. Lebanon is fully integrated with WooCommerece, and Our Team Showcase. It allows you to feature posts, pages or products simply by selecting the post you want to feature. This theme also provides RTL language support. This theme has many features that cannot usually be found in a free theme, and can be used by beginners and developers to build a great site quickly and effieciently. See the live demo here: http://lebanon.smartcatdev.wpengine.com/
+Lebanon is a clean & responsive multi-purpose theme with tons of customizable features. It is well suited for food or lifestyle bloggers, business, teams, travel blog, photographers e-commerce stores and creative individuals. You can customize all the colors, fonts, and appearance and preview your changes live. A theme that makes it easy for you to create a beautiful and professional looking site quickly and easily. Lebanon is fully integrated with WooCommerece, and Our Team Showcase. It allows you to feature posts, pages or products simply by selecting the post you want to feature. This theme also provides RTL language support. This theme has many features that cannot usually be found in a free theme, and can be used by beginners and developers to build a great site quickly and effieciently. See the live demo here: http://lebanon.smartcatdev.wpengine.com/
 
 == Installation ==
 	
@@ -105,9 +105,6 @@ and sanitization of customizer options
 * Blog tiles background images now cover the entire block
 * Allow user the ability to set custom image in Jumbotron
 * Added additional customizer options to control output on the blog and single posts
-
-Pro version options
-* Author bio section
 
 
 
