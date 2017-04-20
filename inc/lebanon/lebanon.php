@@ -514,7 +514,7 @@ function lebanon_render_homepage() {
         <div class="container">        
             <div class="row text-center">
                 <div class="col-sm-12">
-                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id, 'medium' ); ?></a>
+                    <a href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>"><?php echo get_the_post_thumbnail( $post_id, 'large' ); ?></a>
                 </div>
             </div>        
         </div>        

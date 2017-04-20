@@ -204,7 +204,7 @@ ul li{
 }
 
 #lebanon-header .header-inner ul.sub-menu a{
-    color: #fff;
+    color: #fff !important;
     line-height: 20px;
 }
 
@@ -767,11 +767,9 @@ ul.lebanon-nav > li.menu-item.menu-item-has-children > a:after{
 }
 
 #lebanon-topa .wp-post-image{
-    /*width: 50%;*/
-    border: 1px solid #e1e1e1;
+    width: 50%;
     padding: 3px;
     background: #fff;
-    box-shadow: 0 1px 4px rgba( 0,0,0,0.4);
     
 }
 
@@ -930,7 +928,7 @@ input[type="submit"],
 }
 
 #lebanon-sidebar .widget-title{
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     margin: 0 0 15px 0;
 }
@@ -1106,7 +1104,7 @@ input[type="submit"],
 
 .lebanon-blog-post .post-panel-content{
     padding: 0 15px 15px 15px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -1144,7 +1142,9 @@ input[type="submit"],
 /*------------- Pagination --------------*/
 .lebanon-pagination{
     text-align: center;
-    margin-top: 15px;
+    padding-top: 15px;
+    clear: both;
+    
 }
 .lebanon-pagination span,
 .lebanon-pagination a{
@@ -1244,9 +1244,21 @@ input[type="submit"],
 }
 
 #lebanon-homepage-widget{
-
     overflow: hidden;
     text-align: center;
+}
+
+#lebanon-homepage-widget h1,
+#lebanon-homepage-widget h2,
+#lebanon-homepage-widget h3,
+#lebanon-tope h1,
+#lebanon-tope h2,
+#lebanon-tope h3,
+#lebanon-topd h1,
+#lebanon-topd h2,
+#lebanon-topd h3{
+    font-size: 32px;
+    line-height: 40px;
 }
 
 #lebanon-homepage-widget > div{

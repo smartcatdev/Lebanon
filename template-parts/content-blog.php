@@ -20,14 +20,12 @@ endif; ?>
             
             <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                 
-            <?php if( get_theme_mod( 'blog_style', 'grid' ) == 'stacked' ) : ?>
+            
+            <?php if( get_theme_mod( 'blog_content', 'on' ) == 'on' ) : ?>
+                <?php $count = get_theme_mod( 'blog_word_count', 20 ); ?>
                 <a href="<?php echo esc_url( get_permalink() ); ?>">
-                    <?php echo wp_trim_words( strip_shortcodes( wp_strip_all_tags( get_post_field( 'post_content', $post->ID ) ) ), 25 ); ?>
-                </a>
-            <?php elseif( get_theme_mod( 'blog_style', 'grid' ) == '2col' ) : ?>
-                <a href="<?php echo esc_url( get_permalink() ); ?>">
-                    <?php echo wp_trim_words( strip_shortcodes( wp_strip_all_tags( get_post_field( 'post_content', $post->ID ) ) ), 25 ); ?>
-                </a>
+                    <?php echo wp_trim_words( strip_shortcodes( wp_strip_all_tags( get_post_field( 'post_content', $post->ID ) ) ), $count ); ?>
+                </a>                        
             <?php endif; ?>
             
             
