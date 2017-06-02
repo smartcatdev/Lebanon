@@ -21,7 +21,7 @@ function lebanon_setup() {
     
     
         if( !defined( 'LEBANON_VERSION' ) ) :
-            define('LEBANON_VERSION', '1.4.0');
+            define('LEBANON_VERSION', '1.4.1');
         endif;
     
         
@@ -45,6 +45,9 @@ function lebanon_setup() {
 	add_theme_support( 'title-tag' );
         add_theme_support('woocommerce');
         add_editor_style('');
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
         
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.

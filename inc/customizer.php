@@ -5,6 +5,18 @@
  *
  * @package Lebanon
  */
+
+
+function lebanon_customize_js_enqueue() {
+    
+    wp_enqueue_script( 'lebanon-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+}
+
+if( !function_exists( 'lebanon_pro_init' ) ) :
+    add_action( 'customize_controls_enqueue_scripts', 'lebanon_customize_js_enqueue' );
+endif;
+
+
 function lebanon_customize_register( $wp_customize ) {
 
     class LebanonCustomizerPanel extends WP_Customize_Control {
@@ -57,7 +69,7 @@ function lebanon_customize_register( $wp_customize ) {
     }
     
     
-    require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/demo.php';
+//    require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/demo.php';
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/headerbar.php';
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/logo-menubar.php';
     require_once trailingslashit( get_template_directory() ) . 'inc/customizer-panels/frontpage.php';

@@ -1,4 +1,9 @@
 jQuery( document ).ready( function( $ ){
+    
+    $('#customize-info .preview-notice').html('<a class="button button-primary" href="http://lebanon.smartcatdev.wpengine.com" target="_BLANK">Upgrade to Lebanon Pro</a>');
+    $('#customize-info .preview-notice').append('<p style="color: #cc0000">The pro version includes a Jumbotron image slider with up to 6 slides, more font options, map widget, alternative blog templates, testimonials & clients/brands widget, more widget areas, contact form widget, Call to actions, Pricing widgets, removes the "Design by Smartcat" and more!</p>');
+
+
 
     $( '#customize-control-theme_color input[type=radio]' ).each( function() {
 

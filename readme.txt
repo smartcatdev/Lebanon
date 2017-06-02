@@ -4,8 +4,8 @@ Contributors: smartcat
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,featured-image-header,featured-images,full-width-template,theme-options,translation-ready,blog,food-and-drink,entertainment,rtl-language-support
 
 Requires at least: 4.6
-Tested up to: 4.7.3
-Stable tag: 1.4.0
+Tested up to: 4.7.5
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,7 +106,8 @@ and sanitization of customizer options
 * Allow user the ability to set custom image in Jumbotron
 * Added additional customizer options to control output on the blog and single posts
 
-
+= 1.4.1 - June 2nd, 2016
+* Updates for Woocommerce gallery for version 3.x support
 
 == Credits ==
 
