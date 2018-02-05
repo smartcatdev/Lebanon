@@ -4,8 +4,8 @@ Contributors: smartcat
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,featured-image-header,featured-images,full-width-template,theme-options,translation-ready,blog,food-and-drink,entertainment,rtl-language-support
 
 Requires at least: 4.6
-Tested up to: 4.7.5
-Stable tag: 1.4.1
+Tested up to: 4.9.2
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,9 @@ and sanitization of customizer options
 
 = 1.4.1 - June 2nd, 2016
 * Updates for Woocommerce gallery for version 3.x support
+
+= 1.4.2 - February 5th, 2018
+* Updated styles for WooCommerce categories in Shop view
 
 == Credits ==
 

@@ -1495,4 +1495,12 @@ li.product a.ajax_add_to_cart{
     }
 }
 
+/* ----- WooCommerce Updates ----- */
+ul.products mark.count {
+    display: none;
+}
 
+.woocommerce ul.products li.product .woocommerce-loop-category__title {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
