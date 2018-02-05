@@ -21,7 +21,7 @@ function lebanon_setup() {
     
     
         if( !defined( 'LEBANON_VERSION' ) ) :
-            define('LEBANON_VERSION', '1.4.1');
+            define('LEBANON_VERSION', '1.4.2');
         endif;
     
         
